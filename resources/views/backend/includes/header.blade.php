@@ -1,4 +1,4 @@
-<header class="c-header c-header-light c-header-fixed">
+<header class="c-header c-header-light c-header-fixed text-white mb-2 border-0">
     <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
         <i class="c-icon c-icon-lg cil-menu"></i>
     </button>
@@ -12,17 +12,17 @@
     </a>
 
     <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
-        <i class="c-icon c-icon-lg cil-menu"></i>
+        <i class="c-icon c-icon-lg cil-menu text-white"></i>
     </button>
 
     <ul class="c-header-nav d-md-down-none">
-        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{ route('frontend.index') }}">@lang('Home')</a></li>
+        <li class="c-header-nav-item px-3"><a class="c-header-nav-link text-white" href="{{ route('frontend.index') }}">@lang('Home')</a></li>
 
         @if(config('boilerplate.locale.status') && count(config('boilerplate.locale.languages')) > 1)
             <li class="c-header-nav-item dropdown">
                 <x-utils.link
                     :text="__(getLocaleName(app()->getLocale()))"
-                    class="c-header-nav-link dropdown-toggle"
+                    class="c-header-nav-link dropdown-toggle text-white"
                     id="navbarDropdownLanguageLink"
                     data-toggle="dropdown"
                     aria-haspopup="true"
@@ -61,7 +61,7 @@
         </li>
     </ul>
 
-    <div class="c-subheader justify-content-between px-3">
+    <div class="c-subheader justify-content-between px-3" style="background-color: inherit !important; border-top: 1px solid black;">
         @include('backend.includes.partials.breadcrumbs')
 
         <div class="c-subheader-nav mfe-2">

@@ -1,4 +1,4 @@
-<div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+<div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show --gray-background border-end border-black" id="sidebar">
     <div class="c-sidebar-brand d-lg-down-none">
         <img src="{{ asset('img/brand/M-BOSS-Logo-crop.png#full') }}" class="img"
             alt="{{ asset('img/brand/M-BOSS-Logo-crop.png#full') }}" width="46" height="46">
@@ -101,7 +101,7 @@
             <li class="c-sidebar-nav-dropdown">
                 <x-utils.link href="#" icon="c-sidebar-nav-icon cil-people" class="c-sidebar-nav-dropdown-toggle"
                     :text="__('User Management')" />
-    
+
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.appuser.index')" class="c-sidebar-nav-link"
@@ -127,7 +127,7 @@
             <li class="c-sidebar-nav-dropdown">
                 <x-utils.link href="#" icon="c-sidebar-nav-icon cil-money" class="c-sidebar-nav-dropdown-toggle"
                     :text="__('Invoice Management')" />
-    
+
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.category.index')" class="c-sidebar-nav-link"
@@ -157,13 +157,13 @@
                     <li class="c-sidebar-nav-dropdown">
                         <x-utils.link href="#" icon="c-sidebar-nav-icon cil-dollar" class="c-sidebar-nav-dropdown-toggle"
                             :text="__('Invoice Purchased')" />
-            
+
                         <ul class="c-sidebar-nav-dropdown-items">
                             <li class="c-sidebar-nav-item">
                                 <x-utils.link :href="route('admin.invoice.purchased')" class="c-sidebar-nav-link"
                                     :text="__('Purchased Invoice List')" />
                             </li>
-        
+
                             <li class="c-sidebar-nav-item">
                                 <x-utils.link :href="route('admin.invoice.purchased_status')" class="c-sidebar-nav-link"
                                     :text="__('Purchased Invoice Status')" />
@@ -184,7 +184,7 @@
                                     :text="__('Purchased Default List')" />
                             </li>
                         </ul>
-                        
+
                     </li>
 
                 </ul>
@@ -193,7 +193,7 @@
             <li class="c-sidebar-nav-dropdown">
                 <x-utils.link href="#" icon="c-sidebar-nav-icon cil-user-follow" class="c-sidebar-nav-dropdown-toggle"
                     :text="__('Seller Management')" />
-    
+
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.personal-info.app_user')" class="c-sidebar-nav-link"
@@ -217,7 +217,7 @@
             <li class="c-sidebar-nav-dropdown">
                 <x-utils.link href="#" icon="c-sidebar-nav-icon cil-user-follow" class="c-sidebar-nav-dropdown-toggle"
                     :text="__('Buyer Management')" />
-    
+
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.buyer-kyc.app_user')" class="c-sidebar-nav-link"
