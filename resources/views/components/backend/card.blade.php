@@ -1,4 +1,4 @@
-<div class="card border-0 --gray-background" >
+<div class="card border-0 --gray-background">
     @if (isset($header))
         <div class="card-header --gray-background text-white fs-3 fw-semibold border-0">
             {{ $header }}
@@ -18,7 +18,7 @@
     @endif
 
     @if (isset($footer))
-        <div class="card-footer">
+        <div class="card-footer --gray-background border-0">
             {{ $footer }}
         </div><!--card-footer-->
     @endif

@@ -1,11 +1,7 @@
 @forelse($roles->where('type', $type) as $role)
     <div class="mb-2">
         <div class="form-check">
-            <input
-                name="roles[]"
-                id="role_{{ $role->id }}"
-                value="{{ $role->id }}"
-                class="form-check-input"
+            <input name="roles[]" id="role_{{ $role->id }}" value="{{ $role->id }}" class="form-check-input"
                 type="checkbox"
                 {{ (old('rules') && in_array($role->id, old('rules'), true)) || (isset($user) && in_array($role->id, $user->roles->modelKeys(), true)) ? 'checked' : '' }} />
 
@@ -23,7 +19,7 @@
         @if ($role->permissions->count())
             <blockquote class="ml-3">
                 @foreach ($role->permissions as $permission)
-                    <i class="fa fa-check-circle"></i> {{ $permission->description }}<br/>
+                    <i class="fa fa-check-circle"></i> {{ $permission->description }}<br />
                 @endforeach
             </blockquote>
         @else
@@ -33,5 +29,5 @@
         @endif
     @endif
 @empty
-    <p class="mb-0"><em>@lang('There are no roles to choose from for this type.')</em></p>
+    <p class="mb-0 text-white"><em>@lang('There are no roles to choose from for this type.')</em></p>
 @endforelse

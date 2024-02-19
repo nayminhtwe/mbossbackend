@@ -1,5 +1,5 @@
 <div class="form-group row">
-    <label for="roles" class="col-md-2 col-form-label">@lang('Roles')</label>
+    <label for="roles" class="col-md-2 col-form-label text-white">@lang('Roles')</label>
 
     <div class="col-md-10">
         <div x-show="userType === '{{ $model::TYPE_ADMIN }}'">
