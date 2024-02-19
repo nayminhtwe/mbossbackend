@@ -1,6 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title', __('User List'))
+
 @push('after-styles')
     <style>
 
