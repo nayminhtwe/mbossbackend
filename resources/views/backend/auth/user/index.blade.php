@@ -8,8 +8,17 @@
 
 @push('after-styles')
     <style>
-        .width-20 {
-            width: 1px !important;
+        button.dropdown-toggle {
+            color: white !important;
+        }
+
+        small {
+            color: white;
+        }
+
+        ul.dropdown-menu {
+            background-color: var(--gray-color);
+            color: white;
         }
 
         table{

@@ -1,7 +1,8 @@
-<div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show --gray-background border-end border-black" id="sidebar">
+<div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show --gray-background border-end border-black"
+     id="sidebar">
     <div class="c-sidebar-brand d-lg-down-none">
         <img src="{{ asset('img/brand/M-BOSS-Logo-crop.png#full') }}" class="img"
-            alt="{{ asset('img/brand/M-BOSS-Logo-crop.png#full') }}" width="46" height="46">
+             alt="{{ asset('img/brand/M-BOSS-Logo-crop.png#full') }}" width="46" height="46">
         {{-- <svg class="c-sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
             <use xlink:href="{{ asset('img/brand/M-BOSS-Logo-crop.png#full') }}"></use>
         </svg> --}}
@@ -17,7 +18,7 @@
                 :href="route('admin.dashboard')"
                 :active="activeClass(Route::is('admin.dashboard'), 'c-active')"
                 icon="c-sidebar-nav-icon cil-speedometer"
-                :text="__('Dashboard')" />
+                :text="__('Dashboard')"/>
         </li>
 
         @if (
@@ -38,7 +39,7 @@
                     href="#"
                     icon="c-sidebar-nav-icon cil-user"
                     class="c-sidebar-nav-dropdown-toggle"
-                    :text="__('Access')" />
+                    :text="__('Access')"/>
 
                 <ul class="c-sidebar-nav-dropdown-items">
                     @if (
@@ -57,7 +58,7 @@
                                 :href="route('admin.auth.user.index')"
                                 class="c-sidebar-nav-link"
                                 :text="__('User Management')"
-                                :active="activeClass(Route::is('admin.auth.user.*'), 'c-active')" />
+                                :active="activeClass(Route::is('admin.auth.user.*'), 'c-active')"/>
                         </li>
                     @endif
 
@@ -67,7 +68,7 @@
                                 :href="route('admin.auth.role.index')"
                                 class="c-sidebar-nav-link"
                                 :text="__('Role Management')"
-                                :active="activeClass(Route::is('admin.auth.role.*'), 'c-active')" />
+                                :active="activeClass(Route::is('admin.auth.role.*'), 'c-active')"/>
                         </li>
                     @endif
                 </ul>
@@ -80,108 +81,110 @@
                     href="#"
                     icon="c-sidebar-nav-icon cil-list"
                     class="c-sidebar-nav-dropdown-toggle"
-                    :text="__('Logs')" />
+                    :text="__('Logs')"/>
 
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link
                             :href="route('log-viewer::dashboard')"
                             class="c-sidebar-nav-link"
-                            :text="__('Dashboard')" />
+                            :text="__('Dashboard')"/>
                     </li>
                     <li class="c-sidebar-nav-item">
                         <x-utils.link
                             :href="route('log-viewer::logs.list')"
                             class="c-sidebar-nav-link"
-                            :text="__('Logs')" />
+                            :text="__('Logs')"/>
                     </li>
                 </ul>
             </li>
 
             <li class="c-sidebar-nav-dropdown">
                 <x-utils.link href="#" icon="c-sidebar-nav-icon cil-people" class="c-sidebar-nav-dropdown-toggle"
-                    :text="__('User Management')" />
+                              :text="__('User Management')"/>
 
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.appuser.index')" class="c-sidebar-nav-link"
-                            :text="__('User List')" />
+                                      :text="__('User List')"/>
                     </li>
-                </ul>
 
-                <ul class="c-sidebar-nav-dropdown-items">
+
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.wallet')" class="c-sidebar-nav-link"
-                            :text="__('User Wallet List')" />
+                                      :text="__('User Wallet List')"/>
                     </li>
-                </ul>
 
-                <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.transaction_log')" class="c-sidebar-nav-link"
-                            :text="__('User Transaction Log')" />
+                                      :text="__('User Transaction Log')"/>
                     </li>
                 </ul>
             </li>
 
             <li class="c-sidebar-nav-dropdown">
                 <x-utils.link href="#" icon="c-sidebar-nav-icon cil-money" class="c-sidebar-nav-dropdown-toggle"
-                    :text="__('Invoice Management')" />
+                              :text="__('Invoice Management')"/>
 
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.category.index')" class="c-sidebar-nav-link"
-                            :text="__('Payer List')" />
+                                      :text="__('Payer List')"/>
                     </li>
 
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.invoice.index')" class="c-sidebar-nav-link"
-                            :text="__('Pending Invoice List')" />
+                                      :text="__('Pending Invoice List')"/>
                     </li>
 
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.invoice.finished')" class="c-sidebar-nav-link"
-                            :text="__('Created Invoice List')" />
+                                      :text="__('Created Invoice List')"/>
                     </li>
 
                     <li class="c-sidebar-nav-item">
-                        <x-utils.link :href="route('admin.invoice.seller_approved_invoice_list')" class="c-sidebar-nav-link"
-                            :text="__('Seller Approved Invoice List')" />
+                        <x-utils.link :href="route('admin.invoice.seller_approved_invoice_list')"
+                                      class="c-sidebar-nav-link"
+                                      :text="__('Seller Approved Invoice List')"/>
                     </li>
 
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.invoice.deleted_invoice_list')" class="c-sidebar-nav-link"
-                            :text="__('Deleted Invoice List')" />
+                                      :text="__('Deleted Invoice List')"/>
                     </li>
 
                     <li class="c-sidebar-nav-dropdown">
-                        <x-utils.link href="#" icon="c-sidebar-nav-icon cil-dollar" class="c-sidebar-nav-dropdown-toggle"
-                            :text="__('Invoice Purchased')" />
+                        <x-utils.link href="#" icon="c-sidebar-nav-icon cil-dollar"
+                                      class="c-sidebar-nav-dropdown-toggle"
+                                      :text="__('Invoice Purchased')"/>
 
                         <ul class="c-sidebar-nav-dropdown-items">
                             <li class="c-sidebar-nav-item">
                                 <x-utils.link :href="route('admin.invoice.purchased')" class="c-sidebar-nav-link"
-                                    :text="__('Purchased Invoice List')" />
+                                              :text="__('Purchased Invoice List')"/>
                             </li>
 
                             <li class="c-sidebar-nav-item">
                                 <x-utils.link :href="route('admin.invoice.purchased_status')" class="c-sidebar-nav-link"
-                                    :text="__('Purchased Invoice Status')" />
+                                              :text="__('Purchased Invoice Status')"/>
                             </li>
 
                             <li class="c-sidebar-nav-item">
-                                <x-utils.link :href="route('admin.invoice.purchased_finished_list')" class="c-sidebar-nav-link"
-                                    :text="__('Purchased Finish List')" />
+                                <x-utils.link :href="route('admin.invoice.purchased_finished_list')"
+                                              class="c-sidebar-nav-link"
+                                              :text="__('Purchased Finish List')"/>
                             </li>
 
                             <li class="c-sidebar-nav-item">
-                                <x-utils.link :href="route('admin.invoice.purchased_delayed_list')" class="c-sidebar-nav-link"
-                                    :text="__('Purchased Delay List')" />
+                                <x-utils.link :href="route('admin.invoice.purchased_delayed_list')"
+                                              class="c-sidebar-nav-link"
+                                              :text="__('Purchased Delay List')"/>
                             </li>
 
                             <li class="c-sidebar-nav-item">
-                                <x-utils.link :href="route('admin.invoice.purchased_default_list')" class="c-sidebar-nav-link"
-                                    :text="__('Purchased Default List')" />
+                                <x-utils.link :href="route('admin.invoice.purchased_default_list')"
+                                              class="c-sidebar-nav-link"
+                                              :text="__('Purchased Default List')"/>
                             </li>
                         </ul>
 
@@ -192,44 +195,44 @@
 
             <li class="c-sidebar-nav-dropdown">
                 <x-utils.link href="#" icon="c-sidebar-nav-icon cil-user-follow" class="c-sidebar-nav-dropdown-toggle"
-                    :text="__('Seller Management')" />
+                              :text="__('Seller Management')"/>
 
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.personal-info.app_user')" class="c-sidebar-nav-link"
-                            :text="__('Seller Registration Form')" />
+                                      :text="__('Seller Registration Form')"/>
                     </li>
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.personal-info.index')" class="c-sidebar-nav-link"
-                            :text="__('Seller Approved List')" />
+                                      :text="__('Seller Approved List')"/>
                     </li>
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.seller.pending')" class="c-sidebar-nav-link"
-                            :text="__('Seller Entry Pending List')" />
+                                      :text="__('Seller Entry Pending List')"/>
                     </li>
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.seller.request')" class="c-sidebar-nav-link"
-                            :text="__('Seller Request List')" />
+                                      :text="__('Seller Request List')"/>
                     </li>
                 </ul>
             </li>
 
             <li class="c-sidebar-nav-dropdown">
                 <x-utils.link href="#" icon="c-sidebar-nav-icon cil-user-follow" class="c-sidebar-nav-dropdown-toggle"
-                    :text="__('Buyer Management')" />
+                              :text="__('Buyer Management')"/>
 
                 <ul class="c-sidebar-nav-dropdown-items">
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.buyer-kyc.app_user')" class="c-sidebar-nav-link"
-                            :text="__('Buyer Registration Form')" />
+                                      :text="__('Buyer Registration Form')"/>
                     </li>
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.buyer-kyc.index')" class="c-sidebar-nav-link"
-                            :text="__('Buyer Approved List')" />
+                                      :text="__('Buyer Approved List')"/>
                     </li>
                     <li class="c-sidebar-nav-item">
                         <x-utils.link :href="route('admin.buyer-kyc.request')" class="c-sidebar-nav-link"
-                            :text="__('Buyer Request List')" />
+                                      :text="__('Buyer Request List')"/>
                     </li>
 
                 </ul>
@@ -238,5 +241,6 @@
         @endif
     </ul>
 
-    <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
+    <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
+            data-class="c-sidebar-minimized"></button>
 </div><!--sidebar-->
