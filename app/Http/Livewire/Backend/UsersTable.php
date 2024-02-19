@@ -102,6 +102,7 @@ class UsersTable extends DataTableComponent
             Column::make(__('Name'))
                 ->sortable(),
             Column::make(__('E-mail'), 'email')
+                ->addClass('width-20')
                 ->sortable(),
             Column::make(__('Verified'), 'email_verified_at')
                 ->sortable(),
