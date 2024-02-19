@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="LogViewer">
     <meta name="author" content="ARCANEDEV">
-    <title>LogViewer - Created by ARCANEDEV</title>
+    <title>LogViewer     - Created by ARCANEDEV</title>
     {{-- Styles --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -19,6 +19,8 @@
         body {
             font-size: .875rem;
             margin-bottom: 60px;
+            background-color: #2c2c2e;
+            color: white;
         }
 
         .main-footer {
@@ -27,7 +29,8 @@
             width: 100%;
             height: 60px;
             line-height: 60px;
-            background-color: #E8EAF6;
+            background-color: #2c2c2e !important;
+            border-top: 1px solid #8a8a8a;
         }
 
         .main-footer p {
