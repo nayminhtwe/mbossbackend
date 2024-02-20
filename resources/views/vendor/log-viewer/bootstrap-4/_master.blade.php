@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="LogViewer">
     <meta name="author" content="ARCANEDEV">
-    <title>LogViewer     - Created by ARCANEDEV</title>
+    <title>LogViewer - Created by ARCANEDEV</title>
     {{-- Styles --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -216,6 +216,22 @@
 
         .badge.badge-env {
             background-color: #6A1B9A;
+        }
+
+        body .row .col-lg-2 .card {
+            background-color: #2c2c2e !important;
+        }
+
+        body .row .col-lg-2 .card .list-group .list-group-item {
+            background-color: #2c2c2e !important;
+        }
+
+        body .row .col-lg-10 .card {
+            background-color: #2c2c2e !important;
+        }
+
+        table tbody td a {
+            margin-bottom: 5px
         }
     </style>
 </head>
