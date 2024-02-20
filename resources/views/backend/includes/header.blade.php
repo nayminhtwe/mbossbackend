@@ -1,4 +1,4 @@
-<header class="c-header c-header-light c-header-fixed text-white border-0">
+<header class="c-header c-header-light c-header-fixed text-white` border-0">
     <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
         <i class="c-icon c-icon-lg cil-menu"></i>
     </button>

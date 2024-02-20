@@ -26,3 +26,7 @@ Route::group(['as' => 'frontend.'], function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {
     includeRouteFiles(__DIR__.'/backend/');
 });
+
+Route::get('admin/personal-detail', function () {
+    return view('backend.seller.detail');
+});
