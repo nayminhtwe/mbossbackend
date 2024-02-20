@@ -38,7 +38,7 @@ class SellerPersonalInfoController extends Controller
     public function create($app_user_id)
     {
         $app_user = AppUser::findOrfail($app_user_id);
-  
+
         return view('backend.seller.create_personal_info',compact('app_user'));
     }
 
@@ -103,7 +103,7 @@ class SellerPersonalInfoController extends Controller
         ];
 
         $pending_update = SellerPending::where('id', $seller_pending->id)->where($status)->first();
-        
+
         if($pending_update != null) {
             $seller_personal_info->app_user->seller_status = 1;
             $seller_personal_info->app_user->save();
@@ -255,14 +255,14 @@ class SellerPersonalInfoController extends Controller
             $sellerPersonalInfo->app_user->seller_business_license_file->business_license = $business_license;
             $sellerPersonalInfo->app_user->seller_business_license_file->save();
         }
-        
+
         if($request->hasFile('bod_resolution')) {
             Storage::delete($sellerPersonalInfo->app_user->seller_bod_resolution_file->bod_resolution);
             $bod_resolution = $request->bod_resolution->store('public/attachment');
             $sellerPersonalInfo->app_user->seller_bod_resolution_file->bod_resolution = $bod_resolution;
             $sellerPersonalInfo->app_user->seller_bod_resolution_file->save();
         }
-        
+
         if($request->hasFile('import_export_license')) {
             Storage::delete($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license);
             $import_export_license = $request->import_export_license->store('public/attachment');
@@ -287,7 +287,7 @@ class SellerPersonalInfoController extends Controller
     public function app_user_index()
     {
         $app_users = AppUser::where('seller_status', 0)->get();
-  
+
         return view('backend.seller.app_user_index',compact('app_users'));
     }
 
@@ -322,7 +322,7 @@ class SellerPersonalInfoController extends Controller
         $seller_import_export_license_file_request = SellerImExLicenseFileRes::where('app_user_id', $app_user_id)->where('kyc_status', 1)->whereHas('seller_buyer_request', function ($query) {
             $query->where('kyc_status', 1)->where('seller_finish_status', 0);
         })->get();
-        
+
         return view('backend.seller.request_show', compact(
             'files',
             'seller_company_extract_file_request',
