@@ -18,7 +18,7 @@
         <x-slot name="body">
             <div x-data="{userType : '{{ $model::TYPE_ADMIN }}'}">
 
-                <div class="card">
+                <div class="card --gray-background" style="color: white !important">
 
                     @if ($errors->any())
                         <div class="alert alert-danger">

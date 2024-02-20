@@ -12,7 +12,7 @@
     @endif
 
     @if (isset($body))
-        <div class="card-body">
+        <div class="card-body --gray-background" style="color: white !important">
             {{ $body }}
         </div><!--card-body-->
     @endif
