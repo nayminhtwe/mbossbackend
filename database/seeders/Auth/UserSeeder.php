@@ -23,23 +23,32 @@ class UserSeeder extends Seeder
         // Add the master administrator, user id of 1
         User::create([
             'type' => User::TYPE_ADMIN,
-            'name' => 'Super Admin',
-            'email' => 'info@mbossfinancing.com',
-            'password' => 'secret!@#',
+            'name' => 'Chit Su Han Soe',
+            'email' => 'chitsu@mboss.finance',
+            'password' => 'Tf4F5HT6',
             'email_verified_at' => now(),
             'active' => true,
         ]);
 
-        if (app()->environment(['local', 'testing'])) {
-            User::create([
-                'type' => User::TYPE_USER,
-                'name' => 'Test User',
-                'email' => 'user@user.com',
-                'password' => 'secret',
-                'email_verified_at' => now(),
-                'active' => true,
-            ]);
-        }
+        User::create([
+            'type' => User::TYPE_ADMIN,
+            'name' => 'Zaw Linn Htet',
+            'email' => 'zawlinnhtet@mboss.finance',
+            'password' => 'XfajS8Gv',
+            'email_verified_at' => now(),
+            'active' => true,
+        ]);
+
+        // if (app()->environment(['local', 'testing'])) {
+        //     User::create([
+        //         'type' => User::TYPE_USER,
+        //         'name' => 'Test User',
+        //         'email' => 'user@user.com',
+        //         'password' => 'secret',
+        //         'email_verified_at' => now(),
+        //         'active' => true,
+        //     ]);
+        // }
 
         $this->enableForeignKeys();
     }
