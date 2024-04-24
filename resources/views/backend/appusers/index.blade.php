@@ -64,6 +64,10 @@
         @lang('User List')
     </x-slot>
 
+    <x-slot name="headerActions">
+        <x-utils.link icon="c-icon cil-plus" class="card-header-action" :href="route('admin.appuser.create')" :text="__('Create App User')" />
+    </x-slot>
+
     <x-slot name="body">
         <livewire:backend.app-user-table />
     </x-slot>
