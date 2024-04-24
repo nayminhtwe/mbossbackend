@@ -43,7 +43,7 @@
                             <label for="import_export_license" class="col-md-3 col-form-label">@lang('Import/Export License :')</label>
         
                             <div class="col-md-9">
-                                <input type="file" name="import_export_license" required />
+                                <input type="file" name="import_export_license" />
                             </div>
                         </div>
                         <!--form-group-->

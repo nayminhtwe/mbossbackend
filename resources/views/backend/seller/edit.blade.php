@@ -544,7 +544,7 @@
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license != null)
+                                            @if($sellerPersonalInfo->app_user->seller_import_export_license_file != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license) }}" height="250" width="250">
                                             @endif
