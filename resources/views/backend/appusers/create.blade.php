@@ -172,7 +172,7 @@
             </x-slot>
 
             <x-slot name="footer">
-                <button class="btn btn-sm btn-primary float-right" type="submit">@lang('Create Payer')</button>
+                <button class="btn btn-sm btn-primary float-right" type="submit">@lang('Create App User')</button>
             </x-slot>
         </x-backend.card>
     </x-forms.post>

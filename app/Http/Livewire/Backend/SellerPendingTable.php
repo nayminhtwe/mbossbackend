@@ -13,7 +13,7 @@ class SellerPendingTable extends DataTableComponent
     public function query(): Builder
     {
         $query =  SellerPending::whereHas('app_user', function ($query) {
-            $query->where('seller_status', 0);
+            $query->where('seller_status', 0)->where('seller_buyer_status', 1);
         });
 
         return $query;

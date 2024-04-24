@@ -17,7 +17,7 @@ class AppUserSellerRegisterTable extends DataTableComponent
 
     public function query(): Builder
     {
-        $query = AppUser::where('seller_status', 0);
+        $query = AppUser::where('seller_buyer_status', 1)->where('seller_status', 0);
 
         return $query;
     }
