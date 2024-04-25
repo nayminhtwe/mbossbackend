@@ -201,6 +201,7 @@
                                     <option value="(From MMK 5,000,001 to MMK 10,000,000)" {{ $buyerKyc->annualIncome == '(From MMK 5,000,001 to MMK 10,000,000)' ? 'selected' : '' }}>(From MMK 5,000,001 to MMK 10,000,000)</option>
                                     <option value="(From MMK 10,000,001 to MMK 30,000,000)" {{ $buyerKyc->annualIncome == '(From MMK 10,000,001 to MMK 30,000,000)' ? 'selected' : '' }}>(From MMK 10,000,001 to MMK 30,000,000)</option>
                                     <option value="(From MMK 30,000,001 to MMK 50,000,000)" {{ $buyerKyc->annualIncome == '(From MMK 30,000,001 to MMK 50,000,000)' ? 'selected' : '' }}>(From MMK 30,000,001 to MMK 50,000,000)</option>
+                                    <option value="(From MMK 30,000,001 to MMK 50,000,000)" {{ $buyerKyc->annualIncome == '(Above MMK 50,000,000)' ? 'selected' : '' }}>(Above MMK 50,000,000)</option>
                                 </select>
                             </div>
                         </div>

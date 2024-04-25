@@ -453,6 +453,7 @@
                                         <option value="(From MMK 5,000,001 to MMK 10,000,000)">(From MMK 5,000,001 to MMK 10,000,000)</option>
                                         <option value="(From MMK 10,000,001 to MMK 30,000,000)">(From MMK 10,000,001 to MMK 30,000,000)</option>
                                         <option value="(From MMK 30,000,001 to MMK 50,000,000)">(From MMK 30,000,001 to MMK 50,000,000)</option>
+                                        <option value="(Above MMK 50,000,000)">(Above MMK 50,000,000)</option>
                                     </select>
                                 </div>
                             </div>

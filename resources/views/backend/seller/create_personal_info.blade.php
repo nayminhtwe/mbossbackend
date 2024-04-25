@@ -51,13 +51,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="father_name">Father's Name * :</label>
-                                    <input type="text" name="father_name" class="form-control" value="{{ old('fatherName') }}" maxlength="100" required />
+                                    <input type="text" name="father_name" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nrc_or_passport">NRC ID / Passport Number * :</label>
-                                    <input type="text" name="nrc_or_passport" class="form-control" value="{{ old('nrc_or_passport') }}" maxlength="100" required />
+                                    <input type="text" name="nrc_or_passport" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -75,7 +75,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="birth_date">Birth Date * :</label>
-                                    <input type="date" name="birth_date" class="form-control" value="{{ old('birth_date') }}" maxlength="100" required />
+                                    <input type="date" name="birth_date" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -333,13 +333,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="birth_place_city">Birth Place (City) * :</label>
-                                    <input type="text" name="birth_place_city" class="form-control" value="{{ old('birth_place_city') }}" maxlength="100" required />
+                                    <input type="text" name="birth_place_city" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="position">Position * :</label>
-                                    <input type="text" name="position" class="form-control" value="{{ old('position') }}" maxlength="100" required />
+                                    <input type="text" name="position" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -600,13 +600,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="personal_landline">Landline 1:</label>
-                                    <input type="text" name="personal_landline" class="form-control" value="{{ old('personal_landline') }}" maxlength="100" />
+                                    <input type="text" name="personal_landline" class="form-control" maxlength="100" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="personal_mobile">Mobile 1 * :</label>
-                                    <input type="text" name="personal_mobile" class="form-control" value="{{ old('personal_mobile') }}" maxlength="100" required />
+                                    <input type="text" name="personal_mobile" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-12">
@@ -615,25 +615,25 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="authorized_person_full_name">Full Name:</label>
-                                    <input type="text" name="authorized_person_full_name" class="form-control" value="{{ old('authorized_person_full_name') }}" maxlength="100" />
+                                    <input type="text" name="authorized_person_full_name" class="form-control" maxlength="100" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="authorized_person_father_name">Father's Name:</label>
-                                    <input type="text" name="authorized_person_father_name" class="form-control" value="{{ old('authorized_person_father_name') }}" maxlength="100" />
+                                    <input type="text" name="authorized_person_father_name" class="form-control" maxlength="100" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="authorized_person_mobile">Mobile Number:</label>
-                                    <input type="text" name="authorized_person_mobile" class="form-control" value="{{ old('authorized_person_mobile') }}" maxlength="100" />
+                                    <input type="text" name="authorized_person_mobile" class="form-control" maxlength="100" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="authorized_person_email">Email Address:</label>
-                                    <input type="email" name="authorized_person_email" class="form-control" value="{{ old('authorized_person_email') }}" maxlength="100" />
+                                    <input type="email" name="authorized_person_email" class="form-control" maxlength="100" />
                                 </div>
                             </div>
                             <div class="col-12">
@@ -642,13 +642,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="personal_address_line_one">Address Line 1 * :</label>
-                                    <input type="longtext" name="personal_address_line_one" class="form-control" value="{{ old('personal_address_line_one') }}" maxlength="100" required />
+                                    <input type="longtext" name="personal_address_line_one" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="personal_address_line_two">Address Line 2:</label>
-                                    <input type="longtext" name="personal_address_line_two" class="form-control" value="{{ old('personal_address_line_two') }}" maxlength="100" />
+                                    <input type="longtext" name="personal_address_line_two" class="form-control" maxlength="100" />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -906,19 +906,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="township">Township * :</label>
-                                    <input type="text" name="township" class="form-control" value="{{ old('township') }}" maxlength="100" required />
+                                    <input type="text" name="township" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="state_or_division">State/Division * :</label>
-                                    <input type="text" name="state_or_division" class="form-control" value="{{ old('state_or_division') }}" maxlength="100" required />
+                                    <input type="text" name="state_or_division" class="form-control" maxlength="100" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="zip_code">Zip Code:</label>
-                                    <input type="text" name="zip_code" class="form-control" value="{{ old('zip_code') }}" maxlength="100" />
+                                    <input type="text" name="zip_code" class="form-control" maxlength="100" />
                                 </div>
                             </div>
 

@@ -31,8 +31,7 @@
                         <label for="firstName" class="col-md-2 col-form-label text-white">@lang('Frist Name *')</label>
 
                         <div class="col-md-10">
-                            <input type="text" name="firstName" class="form-control" placeholder="{{ __('First Name') }}"
-                                value="{{ old('firstName') }}" maxlength="100" required />
+                            <input type="text" name="firstName" class="form-control" placeholder="{{ __('First Name') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -41,8 +40,7 @@
                         <label for="lastName" class="col-md-2 col-form-label text-white">@lang('Last Name')</label>
 
                         <div class="col-md-10">
-                            <input type="text" name="lastName" class="form-control" placeholder="{{ __('Last Name') }}"
-                                value="{{ old('lastName') }}" maxlength="100" required />
+                            <input type="text" name="lastName" class="form-control" placeholder="{{ __('Last Name') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -51,8 +49,7 @@
                         <label for="email" class="col-md-2 col-form-label text-white">@lang('Email')</label>
 
                         <div class="col-md-10">
-                            <input type="email" name="email" class="form-control" placeholder="{{ __('Email') }}"
-                                value="{{ old('email') }}" maxlength="100" required />
+                            <input type="email" name="email" class="form-control" placeholder="{{ __('Email') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -61,8 +58,7 @@
                         <label for="phone" class="col-md-2 col-form-label text-white">@lang('Phone Number')</label>
 
                         <div class="col-md-10">
-                            <input type="integer" name="phone" class="form-control" placeholder="{{ __('Enter Mobile Phone Number') }}"
-                                value="{{ old('phone') }}" maxlength="100" required />
+                            <input type="integer" name="phone" class="form-control" placeholder="{{ __('Enter Mobile Phone Number') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -71,8 +67,7 @@
                         <label for="password" class="col-md-2 col-form-label text-white">@lang('Password')</label>
 
                         <div class="col-md-10">
-                            <input type="password" name="password" class="form-control" placeholder="{{ __('Enter Your Password') }}"
-                                value="{{ old('password') }}" maxlength="20" required />
+                            <input type="password" name="password" class="form-control" placeholder="{{ __('Enter Your Password') }}" maxlength="20" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -81,8 +76,7 @@
                         <label for="nrc" class="col-md-2 col-form-label text-white">@lang('NRC')</label>
 
                         <div class="col-md-10">
-                            <input type="text" name="nrc" class="form-control" placeholder="{{ __('Enter Your NRC Number') }}"
-                                value="{{ old('nrc') }}" maxlength="100" required />
+                            <input type="text" name="nrc" class="form-control" placeholder="{{ __('Enter Your NRC Number') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -91,8 +85,7 @@
                         <label for="dateOfBirth" class="col-md-2 col-form-label text-white">@lang('Date of Birth')</label>
 
                         <div class="col-md-10">
-                            <input type="date" name="dateOfBirth" class="form-control" placeholder="{{ __('Date of Birth') }}"
-                                value="{{ old('dateOfBirth') }}" maxlength="100" required />
+                            <input type="date" name="dateOfBirth" class="form-control" placeholder="{{ __('Date of Birth') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -101,8 +94,7 @@
                         <label for="age" class="col-md-2 col-form-label text-white">@lang('Age')</label>
 
                         <div class="col-md-10">
-                            <input type="integer" name="age" class="form-control" placeholder="{{ __('Age') }}"
-                                value="{{ old('age') }}" maxlength="100" required />
+                            <input type="integer" name="age" class="form-control" placeholder="{{ __('Age') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -111,8 +103,7 @@
                         <label for="permanentAddress" class="col-md-2 col-form-label text-white">@lang('Permanent Address')</label>
 
                         <div class="col-md-10">
-                            <input type="text" name="permanentAddress" class="form-control" placeholder="{{ __('Permanent Address') }}"
-                                value="{{ old('permanentAddress') }}" required />
+                            <input type="text" name="permanentAddress" class="form-control" placeholder="{{ __('Permanent Address') }}" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -121,8 +112,7 @@
                         <label for="currentAddress" class="col-md-2 col-form-label text-white">@lang('Current Address')</label>
 
                         <div class="col-md-10">
-                            <input type="text" name="currentAddress" class="form-control" placeholder="{{ __('Current Address') }}"
-                                value="{{ old('currentAddress') }}" required />
+                            <input type="text" name="currentAddress" class="form-control" placeholder="{{ __('Current Address') }}" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -131,8 +121,7 @@
                         <label for="bankName" class="col-md-2 col-form-label text-white">@lang('Bank Name')</label>
 
                         <div class="col-md-10">
-                            <input type="text" name="bankName" class="form-control" placeholder="{{ __('Bank Name') }}"
-                                value="{{ old('bankName') }}" maxlength="100" required />
+                            <input type="text" name="bankName" class="form-control" placeholder="{{ __('Bank Name') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
@@ -141,8 +130,7 @@
                         <label for="bankAcc" class="col-md-2 col-form-label text-white">@lang('Bank Account')</label>
 
                         <div class="col-md-10">
-                            <input type="integer" name="bankAcc" class="form-control" placeholder="{{ __('Bank Account') }}"
-                                value="{{ old('bankAcc') }}" maxlength="100" required />
+                            <input type="integer" name="bankAcc" class="form-control" placeholder="{{ __('Bank Account') }}" maxlength="100" required />
                         </div>
                     </div>
                     <!--form-group-->
