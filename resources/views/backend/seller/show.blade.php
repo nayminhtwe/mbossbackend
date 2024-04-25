@@ -412,6 +412,38 @@
                     
                 @endif
 
+                @if ($seller_personal_info->app_user->seller_contract_file)
+                    <div class="h5 text-success">
+                        @lang('8. Contract')
+                    </div>
+                    <div class="row" style="padding: 20px">
+                        <div class="col-lg-12 margin-tb">
+                            <div class="pull-left">
+                                @if($seller_personal_info->app_user->seller_contract_file->contract != null)
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_contract_file->contract) }}" class="img-fluid"
+                                    alt="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_contract_file->contract) }}" height="250" width="250" onclick="this.requestFullscreen()">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+                @if ($seller_personal_info->app_user->seller_other_file)
+                    <div class="h5 text-success">
+                        @lang('9. Other')
+                    </div>
+                    <div class="row" style="padding: 20px">
+                        <div class="col-lg-12 margin-tb">
+                            <div class="pull-left">
+                                @if($seller_personal_info->app_user->seller_other_file->other != null)
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_other_file->other) }}" class="img-fluid"
+                                    alt="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_other_file->other) }}" height="250" width="250" onclick="this.requestFullscreen()">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
             </li>
             
         </ul>

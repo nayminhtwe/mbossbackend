@@ -36,6 +36,8 @@ class AppUserAttachmentTable extends DataTableComponent
             Column::make(__('Business License')),
             Column::make(__('BOD Resolution')),
             Column::make(__('Import Export License')),
+            Column::make(__('Contract')),
+            Column::make(__('Other')),
             // Column::make(__('Actions')),
         ];
     }

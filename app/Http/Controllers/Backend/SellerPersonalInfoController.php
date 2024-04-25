@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\AppUser;
 use App\Models\SellerPersonalInfo;
 use App\Models\SellerBusinessInfo;
+use App\Models\SellerImportExportLicenseFile;
+use App\Models\SellerOtherFile;
 use App\Models\SellerPending;
 use App\Models\FileUpload;
 use App\Models\SellerCompanyExtractFileRes;
@@ -99,6 +101,7 @@ class SellerPersonalInfoController extends Controller
             'company_billing_statement_file' => 1,
             'business_license_file' => 1,
             'bod_resolution_file' => 1,
+            'contract_file' => 1,
             // 'import_export_license_file' => 1
         ];
 
@@ -264,10 +267,43 @@ class SellerPersonalInfoController extends Controller
         }
         
         if($request->hasFile('import_export_license')) {
-            Storage::delete($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license);
-            $import_export_license = $request->import_export_license->store('public/attachment');
-            $sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license = $import_export_license;
-            $sellerPersonalInfo->app_user->seller_import_export_license_file->save();
+            if(!!$sellerPersonalInfo->app_user->seller_import_export_license_file) 
+            {
+                Storage::delete($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license);
+                $import_export_license = $request->import_export_license->store('public/attachment');
+                $sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license = $import_export_license;
+                $sellerPersonalInfo->app_user->seller_import_export_license_file->save();
+            } else {
+                $import_export_license = $request->import_export_license->store('public/attachment');
+                $seller_import_export_license = SellerImportExportLicenseFile::create([
+                    'app_user_id' => $sellerPersonalInfo->app_user->id,
+                    'import_export_license' => $import_export_license,
+                ]);
+            }
+        }
+
+        if($request->hasFile('contract')) {
+            Storage::delete($sellerPersonalInfo->app_user->seller_contract_file->contract);
+            $seller_contract = $request->contract->store('public/attachment');
+            $sellerPersonalInfo->app_user->seller_contract_file->contract = $seller_contract;
+            $sellerPersonalInfo->app_user->seller_contract_file->save();
+        }
+
+        if($request->hasFile('other')) {
+            if(!!$sellerPersonalInfo->app_user->seller_other_file) 
+            {
+                Storage::delete($sellerPersonalInfo->app_user->seller_other_file->other);
+                $seller_other = $request->other->store('public/attachment');
+                $sellerPersonalInfo->app_user->seller_other_file->other = $seller_other;
+                $sellerPersonalInfo->app_user->seller_other_file->save();
+            } else {
+                $seller_other = $request->other->store('public/attachment');
+                $seller_contract = SellerOtherFile::create([
+                    'app_user_id' => $sellerPersonalInfo->app_user->id,
+                    'other' => $seller_other,
+                ]);
+
+            }
         }
 
         return redirect()->route('admin.personal-info.index')->withFlashSuccess(__('Seller KYC was successfully updated.'));

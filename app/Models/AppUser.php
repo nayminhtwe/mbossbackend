@@ -95,6 +95,16 @@ class AppUser extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(SellerImportExportLicenseFile::class);
     }
 
+    public function seller_contract_file()
+    {
+        return $this->hasOne(SellerContractFile::class);
+    }
+
+    public function seller_other_file()
+    {
+        return $this->hasOne(SellerOtherFile::class);
+    }
+
     public function file_upload()
     {
         return $this->hasMany(FileUpload::class);

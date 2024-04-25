@@ -76,6 +76,7 @@ class SellerCompanyRegistrationController extends Controller
             'company_billing_statement_file' => 1,
             'business_license_file' => 1,
             'bod_resolution_file' => 1,
+            'contract_file' => 1,
             // 'import_export_license_file' => 1
         ];
 

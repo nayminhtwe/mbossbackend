@@ -35,6 +35,8 @@ class SellerPendingTable extends DataTableComponent
             Column::make(__('Business License'), ('business_license_file')),
             Column::make(__('BOD Resolution'), ('bod_resolution_file')),
             Column::make(__('Import Export License'), ('import_export_license_file')),
+            Column::make(__('Contract'), ('contract_file')),
+            Column::make(__('Others'), ('other_file')),
             // Column::make(__('Actions')),
         ];
     }

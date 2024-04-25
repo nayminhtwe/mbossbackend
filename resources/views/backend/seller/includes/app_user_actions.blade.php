@@ -13,7 +13,8 @@
             $row->seller_pending->company_extract_file == 0 ||
             $row->seller_pending->company_billing_statement_file == 0 ||
             $row->seller_pending->business_license_file == 0 ||
-            $row->seller_pending->bod_resolution_file == 0)
+            $row->seller_pending->bod_resolution_file == 0 ||
+            $row->seller_pending->contract_file == 0)
 
             <x-utils.create-attachment :href="route('admin.seller.attachment', $row)" />
 

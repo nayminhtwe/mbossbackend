@@ -368,62 +368,62 @@
                                 <h4>Reference 2</h4>
                                 <div class="form-group">
                                     <label for="reference_two_full_name">1. Full Name * :</label>
-                                    <input type="text" name="reference_two_full_name" class="form-control" value="{{ old('reference_two_full_name') ?? $sellerPersonalInfo->app_user->business_info->reference_two_full_name }}" maxlength="100" required />
+                                    <input type="text" name="reference_two_full_name" class="form-control" value="{{ old('reference_two_full_name') ?? $sellerPersonalInfo->app_user->business_info->reference_two_full_name }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_two_father_name">2. Father's Name * :</label>
-                                    <input type="text" name="reference_two_father_name" class="form-control" value="{{ old('reference_two_father_name') ?? $sellerPersonalInfo->app_user->business_info->reference_two_father_name }}" maxlength="100" required />
+                                    <input type="text" name="reference_two_father_name" class="form-control" value="{{ old('reference_two_father_name') ?? $sellerPersonalInfo->app_user->business_info->reference_two_father_name }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_two_nrc">3. NRC Number * :</label>
-                                    <input type="text" name="reference_two_nrc" class="form-control" value="{{ old('reference_two_nrc') ?? $sellerPersonalInfo->app_user->business_info->reference_two_nrc }}" maxlength="100" required />
+                                    <input type="text" name="reference_two_nrc" class="form-control" value="{{ old('reference_two_nrc') ?? $sellerPersonalInfo->app_user->business_info->reference_two_nrc }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_two_address">4. Address * :</label>
-                                    <input type="text" name="reference_two_address" class="form-control" value="{{ old('reference_two_address') ?? $sellerPersonalInfo->app_user->business_info->reference_two_address }}" maxlength="100" required />
+                                    <input type="text" name="reference_two_address" class="form-control" value="{{ old('reference_two_address') ?? $sellerPersonalInfo->app_user->business_info->reference_two_address }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_two_mobile">5. Mobile Number * :</label>
-                                    <input type="number" name="reference_two_mobile" class="form-control" value="{{ old('reference_two_mobile') ?? $sellerPersonalInfo->app_user->business_info->reference_two_mobile }}" maxlength="100" required />
+                                    <input type="number" name="reference_two_mobile" class="form-control" value="{{ old('reference_two_mobile') ?? $sellerPersonalInfo->app_user->business_info->reference_two_mobile }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_two_position">6. Position * :</label>
-                                    <input type="text" name="reference_two_position" class="form-control" value="{{ old('reference_two_position') ?? $sellerPersonalInfo->app_user->business_info->reference_two_position }}" maxlength="100" required />
+                                    <input type="text" name="reference_two_position" class="form-control" value="{{ old('reference_two_position') ?? $sellerPersonalInfo->app_user->business_info->reference_two_position }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_two_email">7. Email * :</label>
-                                    <input type="email" name="reference_two_email" class="form-control" value="{{ old('reference_two_email') ?? $sellerPersonalInfo->app_user->business_info->reference_two_email }}" maxlength="100" required />
+                                    <input type="email" name="reference_two_email" class="form-control" value="{{ old('reference_two_email') ?? $sellerPersonalInfo->app_user->business_info->reference_two_email }}" maxlength="100" />
                                 </div>
                             </div>
                             <div class="col">
                                 <h4>Reference 3</h4>
                                 <div class="form-group">
                                     <label for="reference_three_full_name">1. Full Name * :</label>
-                                    <input type="text" name="reference_three_full_name" class="form-control" value="{{ old('reference_three_full_name') ?? $sellerPersonalInfo->app_user->business_info->reference_three_full_name }}" maxlength="100" required />
+                                    <input type="text" name="reference_three_full_name" class="form-control" value="{{ old('reference_three_full_name') ?? $sellerPersonalInfo->app_user->business_info->reference_three_full_name }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_three_father_name">2. Father's Name * :</label>
-                                    <input type="text" name="reference_three_father_name" class="form-control" value="{{ old('reference_three_father_name') ?? $sellerPersonalInfo->app_user->business_info->reference_three_father_name }}" maxlength="100" required />
+                                    <input type="text" name="reference_three_father_name" class="form-control" value="{{ old('reference_three_father_name') ?? $sellerPersonalInfo->app_user->business_info->reference_three_father_name }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_three_nrc">3. NRC Number * :</label>
-                                    <input type="text" name="reference_three_nrc" class="form-control" value="{{ old('reference_three_nrc') ?? $sellerPersonalInfo->app_user->business_info->reference_three_nrc }}" maxlength="100" required />
+                                    <input type="text" name="reference_three_nrc" class="form-control" value="{{ old('reference_three_nrc') ?? $sellerPersonalInfo->app_user->business_info->reference_three_nrc }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_three_address">4. Address * :</label>
-                                    <input type="text" name="reference_three_address" class="form-control" value="{{ old('reference_three_address') ?? $sellerPersonalInfo->app_user->business_info->reference_three_address }}" maxlength="100" required />
+                                    <input type="text" name="reference_three_address" class="form-control" value="{{ old('reference_three_address') ?? $sellerPersonalInfo->app_user->business_info->reference_three_address }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_three_mobile">5. Mobile Number * :</label>
-                                    <input type="number" name="reference_three_mobile" class="form-control" value="{{ old('reference_three_mobile') ?? $sellerPersonalInfo->app_user->business_info->reference_three_mobile }}" maxlength="100" required />
+                                    <input type="number" name="reference_three_mobile" class="form-control" value="{{ old('reference_three_mobile') ?? $sellerPersonalInfo->app_user->business_info->reference_three_mobile }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_three_position">6. Position * :</label>
-                                    <input type="text" name="reference_three_position" class="form-control" value="{{ old('reference_three_position') ?? $sellerPersonalInfo->app_user->business_info->reference_three_position }}" maxlength="100" required />
+                                    <input type="text" name="reference_three_position" class="form-control" value="{{ old('reference_three_position') ?? $sellerPersonalInfo->app_user->business_info->reference_three_position }}" maxlength="100" />
                                 </div>
                                 <div class="form-group">
                                     <label for="reference_three_email">7. Email * :</label>
-                                    <input type="email" name="reference_three_email" class="form-control" value="{{ old('reference_three_email') ?? $sellerPersonalInfo->app_user->business_info->reference_three_email }}" maxlength="100" required />
+                                    <input type="email" name="reference_three_email" class="form-control" value="{{ old('reference_three_email') ?? $sellerPersonalInfo->app_user->business_info->reference_three_email }}" maxlength="100" />
                                 </div>
                             </div>
                         </div>
@@ -547,6 +547,38 @@
                                             @if($sellerPersonalInfo->app_user->seller_import_export_license_file != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license) }}" height="250" width="250">
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="contract">8. For Contract * :</label>
+                                    <input type="file" name="contract" class="form-control" />
+                                </div>
+                                <div class="row" style="padding: 20px">
+                                    <div class="col-lg-12 margin-tb">
+                                        <div class="pull-left">
+                                            @if($sellerPersonalInfo->app_user->seller_contract_file != null)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_contract_file->contract) }}" class="img-fluid"
+                                                alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_contract_file->contract) }}" height="250" width="250">
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="other">9. Others :</label>
+                                    <input type="file" name="other" class="form-control" />
+                                </div>
+                                <div class="row" style="padding: 20px">
+                                    <div class="col-lg-12 margin-tb">
+                                        <div class="pull-left">
+                                            @if($sellerPersonalInfo->app_user->seller_other_file != null)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_other_file->other) }}" class="img-fluid"
+                                                alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_other_file->other) }}" height="250" width="250">
                                             @endif
                                         </div>
                                     </div>

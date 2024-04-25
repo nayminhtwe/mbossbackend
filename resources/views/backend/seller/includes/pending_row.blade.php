@@ -50,6 +50,14 @@
     @include('backend.seller.includes.import_export_license_status', ['seller_pending' => $row])
 </x-livewire-tables::bs4.table.cell>
 
+<x-livewire-tables::bs4.table.cell>
+    @include('backend.seller.includes.contract_status', ['seller_pending' => $row])
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    @include('backend.seller.includes.other_status', ['seller_pending' => $row])
+</x-livewire-tables::bs4.table.cell>
+
 
 {{-- <x-livewire-tables::bs4.table.cell>
     @include('backend.seller.includes.app_user_actions', ['model' => $row])

@@ -33,3 +33,11 @@
 <x-livewire-tables::bs4.table.cell>
     @include('backend.seller.includes.import_export_license_action', ['model' => $row])
 </x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    @include('backend.seller.includes.contract_action', ['model' => $row])
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    @include('backend.seller.includes.other_action', ['model' => $row])
+</x-livewire-tables::bs4.table.cell>
