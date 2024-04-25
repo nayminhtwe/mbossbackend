@@ -41,19 +41,21 @@ class SellerBodResolutionController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'bod_resolution' => 'required|mimes:png,jpg,pdf,jpeg',
-        ]);
+        // $request->validate([
+        //     'bod_resolution' => 'required|mimes:png,jpg,pdf,jpeg',
+        // ]);
 
         $app_user_id = $request->input('app_user_id');
-        $bod_resolution = $request->file('bod_resolution');
+        $bod_resolutions = $request->file('bod_resolution');
 
-        $image_file = $bod_resolution->store('public/attachment');
+        foreach($bod_resolutions as $bod_resolution) {
+            $image_file = $bod_resolution->store('public/attachment');
 
-        $seller_bod_resolution_file = SellerBodResolutionFile::create([
-            'app_user_id' => $app_user_id,
-            'bod_resolution' => $image_file,
-        ]);
+            $seller_bod_resolution_file = SellerBodResolutionFile::create([
+                'app_user_id' => $app_user_id,
+                'bod_resolution' => $image_file,
+            ]);
+        }
 
         $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
 

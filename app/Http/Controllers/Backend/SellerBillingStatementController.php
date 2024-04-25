@@ -41,19 +41,21 @@ class SellerBillingStatementController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'billing_statement' => 'required|mimes:png,jpg,pdf,jpeg',
-        ]);
+        // $request->validate([
+        //     'billing_statement' => 'required|mimes:png,jpg,pdf,jpeg',
+        // ]);
 
         $app_user_id = $request->input('app_user_id');
-        $billing_statement = $request->file('billing_statement');
+        $billing_statements = $request->file('billing_statement');
 
-        $image_file = $billing_statement->store('public/attachment');
+        foreach($billing_statements as $billing_statement) {
+            $image_file = $billing_statement->store('public/attachment');
 
-        $seller_company_billing_statement = SellerCompanyBillingStatementFile::create([
-            'app_user_id' => $app_user_id,
-            'billing_statement' => $image_file,
-        ]);
+            $seller_company_billing_statement = SellerCompanyBillingStatementFile::create([
+                'app_user_id' => $app_user_id,
+                'billing_statement' => $image_file,
+            ]);
+        }
 
         $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
 

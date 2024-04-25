@@ -44,7 +44,7 @@
                             <label for="nrc_soft_copy" class="col-md-3 col-form-label">@lang('Soft Copy of NRC* :')</label>
         
                             <div class="col-md-9">
-                                <input type="file" name="nrc_soft_copy" required />
+                                <input type="file" name="nrc_soft_copy[]" multiple required />
                             </div>
                         </div>
                         <!--form-group-->

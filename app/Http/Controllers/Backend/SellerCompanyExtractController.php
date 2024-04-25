@@ -41,19 +41,21 @@ class SellerCompanyExtractController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'company_extracts_soft_copy' => 'required|mimes:png,jpg,pdf,jpeg',
-        ]);
+        // $request->validate([
+        //     'company_extracts_soft_copy' => 'required|mimes:png,jpg,pdf,jpeg',
+        // ]);
 
         $app_user_id = $request->input('app_user_id');
-        $company_extracts_soft_copy = $request->file('company_extracts_soft_copy');
+        $company_extracts_soft_copys = $request->file('company_extracts_soft_copy');
 
-        $image_file = $company_extracts_soft_copy->store('public/attachment');
+        foreach($company_extracts_soft_copys as $company_extracts_soft_copy) {
+            $image_file = $company_extracts_soft_copy->store('public/attachment');
 
-        $seller_company_extract = SellerCompanyExtractFile::create([
-            'app_user_id' => $app_user_id,
-            'company_extracts_soft_copy' => $image_file,
-        ]);
+            $seller_company_extract = SellerCompanyExtractFile::create([
+                'app_user_id' => $app_user_id,
+                'company_extracts_soft_copy' => $image_file,
+            ]);
+        }
 
         $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
 

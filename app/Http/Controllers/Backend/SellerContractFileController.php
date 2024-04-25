@@ -41,19 +41,21 @@ class SellerContractFileController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'contract_soft_copy' => 'required|mimes:png,jpg,pdf,jpeg',
-        ]);
+        // $request->validate([
+        //     'contract_soft_copy' => 'required|mimes:png,jpg,pdf,jpeg',
+        // ]);
 
         $app_user_id = $request->input('app_user_id');
-        $contract_soft_copy = $request->file('contract_soft_copy');
+        $contract_soft_copys = $request->file('contract_soft_copy');
 
-        $image_file = $contract_soft_copy->store('public/attachment');
+        foreach($contract_soft_copys as $contract_soft_copy) {
+            $image_file = $contract_soft_copy->store('public/attachment');
 
-        $seller_contract = SellerContractFile::create([
-            'app_user_id' => $app_user_id,
-            'contract' => $image_file,
-        ]);
+            $seller_contract = SellerContractFile::create([
+                'app_user_id' => $app_user_id,
+                'contract' => $image_file,
+            ]);
+        }
 
         $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
 

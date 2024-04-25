@@ -41,19 +41,21 @@ class SellerNrcController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nrc_soft_copy' => 'required|mimes:png,jpg,pdf,jpeg',
-        ]);
+        // $request->validate([
+        //     'nrc_soft_copy' => 'required|mimes:png,jpg,pdf,jpeg',
+        // ]);
 
         $app_user_id = $request->input('app_user_id');
-        $nrc_soft_copy = $request->file('nrc_soft_copy');
+        $nrc_soft_copys = $request->file('nrc_soft_copy');
 
-        $image_file = $nrc_soft_copy->store('public/attachment');
+        foreach($nrc_soft_copys as $nrc_soft_copy) {
+            $image_file = $nrc_soft_copy->store('public/attachment');
 
-        $seller_nrc = SellerNrcFile::create([
-            'app_user_id' => $app_user_id,
-            'nrc_soft_copy' => $image_file,
-        ]);
+            $seller_nrc = SellerNrcFile::create([
+                'app_user_id' => $app_user_id,
+                'nrc_soft_copy' => $image_file,
+            ]);
+        }
 
         $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
 

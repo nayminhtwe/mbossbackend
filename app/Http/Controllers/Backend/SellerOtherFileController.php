@@ -40,19 +40,21 @@ class SellerOtherFileController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'other_soft_copy' => 'required|mimes:png,jpg,pdf,jpeg',
-        ]);
+        // $request->validate([
+        //     'other_soft_copy' => 'required|mimes:png,jpg,pdf,jpeg',
+        // ]);
 
         $app_user_id = $request->input('app_user_id');
-        $other_soft_copy = $request->file('other_soft_copy');
+        $other_soft_copys = $request->file('other_soft_copy');
 
-        $image_file = $other_soft_copy->store('public/attachment');
+        foreach($other_soft_copys as $other_soft_copy) {
+            $image_file = $other_soft_copy->store('public/attachment');
 
-        $seller_contract = SellerOtherFile::create([
-            'app_user_id' => $app_user_id,
-            'other' => $image_file,
-        ]);
+            $seller_contract = SellerOtherFile::create([
+                'app_user_id' => $app_user_id,
+                'other' => $image_file,
+            ]);
+        }
 
         $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
 

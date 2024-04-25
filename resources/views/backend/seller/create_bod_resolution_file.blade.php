@@ -43,7 +43,7 @@
                             <label for="bod_resolution" class="col-md-3 col-form-label">@lang('BOD Resolution* :')</label>
         
                             <div class="col-md-9">
-                                <input type="file" name="bod_resolution" required />
+                                <input type="file" name="bod_resolution[]" multiple required />
                             </div>
                         </div>
                         <!--form-group-->

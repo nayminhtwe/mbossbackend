@@ -14,5 +14,5 @@ class SellerOtherFile extends Model
     public function app_user()
     {
         return $this->belongsTo(AppUser::class);
-    }
+    }   
 }

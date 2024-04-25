@@ -41,19 +41,21 @@ class SellerBusinessLicenseController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'business_license' => 'required|mimes:png,jpg,pdf,jpeg',
-        ]);
+        // $request->validate([
+        //     'business_license' => 'required|mimes:png,jpg,pdf,jpeg',
+        // ]);
 
         $app_user_id = $request->input('app_user_id');
-        $business_license = $request->file('business_license');
+        $business_licenses = $request->file('business_license');
 
-        $image_file = $business_license->store('public/attachment');
+        foreach($business_licenses as $business_license) {
+            $image_file = $business_license->store('public/attachment');
 
-        $seller_business_license = SellerBusinessLicenseFile::create([
-            'app_user_id' => $app_user_id,
-            'business_license' => $image_file,
-        ]);
+            $seller_business_license = SellerBusinessLicenseFile::create([
+                'app_user_id' => $app_user_id,
+                'business_license' => $image_file,
+            ]);
+        }
 
         $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
 

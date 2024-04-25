@@ -43,7 +43,7 @@
                             <label for="business_license" class="col-md-3 col-form-label">@lang('Relevant Business License* :')</label>
         
                             <div class="col-md-9">
-                                <input type="file" name="business_license" required />
+                                <input type="file" name="business_license[]" multiple required />
                             </div>
                         </div>
                         <!--form-group-->

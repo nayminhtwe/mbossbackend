@@ -41,19 +41,21 @@ class SellerImportExportLicenseController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'import_export_license' => 'required|mimes:png,jpg,pdf,jpeg',
-        ]);
+        // $request->validate([
+        //     'import_export_license' => 'required|mimes:png,jpg,pdf,jpeg',
+        // ]);
 
         $app_user_id = $request->input('app_user_id');
-        $import_export_license = $request->file('import_export_license');
+        $import_export_licenses = $request->file('import_export_license');
 
-        $image_file = $import_export_license->store('public/attachment');
+        foreach($import_export_licenses as $import_export_license) {
+            $image_file = $import_export_license->store('public/attachment');
 
-        $seller_import_export_license = SellerImportExportLicenseFile::create([
-            'app_user_id' => $app_user_id,
-            'import_export_license' => $image_file,
-        ]);
+            $seller_import_export_license = SellerImportExportLicenseFile::create([
+                'app_user_id' => $app_user_id,
+                'import_export_license' => $image_file,
+            ]);
+        }
 
         $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
 

@@ -43,7 +43,7 @@
                             <label for="billing_statement" class="col-md-4 col-form-label">@lang('Billing Statement billed to the Company Address* :')</label>
         
                             <div class="col-md-8">
-                                <input type="file" name="billing_statement" required />
+                                <input type="file" name="billing_statement[]" multiple required />
                             </div>
                         </div>
                         <!--form-group-->

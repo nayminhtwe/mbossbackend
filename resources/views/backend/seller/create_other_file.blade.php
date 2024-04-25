@@ -43,7 +43,7 @@
                             <label for="other_soft_copy" class="col-md-3 col-form-label">@lang('Soft Copy of Other file :')</label>
         
                             <div class="col-md-9">
-                                <input type="file" name="other_soft_copy" required />
+                                <input type="file" name="other_soft_copy[]" required multiple/>
                             </div>
                         </div>
                         <!--form-group-->
