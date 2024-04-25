@@ -68,25 +68,25 @@ class SellerOtherFileController extends Controller
             $seller_pending->save();
         }
 
-        $status = [
-            'personal_info' => 1,
-            'business_info' => 1,
-            'nrc_file' => 1,
-            'compnay_registration_file' => 1,
-            'company_extract_file' => 1,
-            'company_billing_statement_file' => 1,
-            'business_license_file' => 1,
-            'bod_resolution_file' => 1,
-            'contract_file' => 1,
-            // 'import_export_license_file' => 1
-        ];
+        // $status = [
+        //     'personal_info' => 1,
+        //     'business_info' => 1,
+        //     'nrc_file' => 1,
+        //     'compnay_registration_file' => 1,
+        //     'company_extract_file' => 1,
+        //     'company_billing_statement_file' => 1,
+        //     'business_license_file' => 1,
+        //     'bod_resolution_file' => 1,
+        //     'contract_file' => 1,
+        //     // 'import_export_license_file' => 1
+        // ];
 
-        $pending_update = SellerPending::where('id', $seller_pending->id)->where($status)->first();
+        // $pending_update = SellerPending::where('id', $seller_pending->id)->where($status)->first();
         
-        if($pending_update != null) {
-            $seller_contract->app_user->seller_status = 1;
-            $seller_contract->app_user->save();
-        }
+        // if($pending_update != null) {
+        //     $seller_contract->app_user->seller_status = 1;
+        //     $seller_contract->app_user->save();
+        // }
 
         return redirect()->route('admin.seller.attachment', $app_user_id)->withFlashSuccess(__('Seller Company Extract Soft Copy was successfully created.'));
     }

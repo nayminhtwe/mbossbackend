@@ -59,6 +59,6 @@
 </x-livewire-tables::bs4.table.cell>
 
 
-{{-- <x-livewire-tables::bs4.table.cell>
-    @include('backend.seller.includes.app_user_actions', ['model' => $row])
-</x-livewire-tables::bs4.table.cell> --}}
+<x-livewire-tables::bs4.table.cell>
+    @include('backend.seller.includes.approve_seller_actions', ['model' => $row])
+</x-livewire-tables::bs4.table.cell>

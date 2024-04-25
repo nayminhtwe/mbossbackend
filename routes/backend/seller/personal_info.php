@@ -16,3 +16,5 @@ Route::get('request', [SellerPersonalInfoController::class, 'request'])->name('s
 Route::get('seller-request/{app_user_id}', [SellerPersonalInfoController::class, 'request_show'])->name('seller-request.show');
 
 Route::get('seller-request-approve/{app_user_id}', [SellerPersonalInfoController::class, 'approve'])->name('seller-request.approve');
+
+Route::get('admin-approve/{app_user_id}', [SellerPersonalInfoController::class, 'admin_approve'])->name('seller-request.admin_approve');

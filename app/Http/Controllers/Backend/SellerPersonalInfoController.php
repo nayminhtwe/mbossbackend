@@ -388,4 +388,33 @@ class SellerPersonalInfoController extends Controller
             return view('backend.seller.request');
         }
     }
+
+    public function admin_approve($app_user_id)
+    {
+        $status = [
+            'personal_info' => 1,
+            'business_info' => 1,
+            'nrc_file' => 1,
+            'compnay_registration_file' => 1,
+            'company_extract_file' => 1,
+            'company_billing_statement_file' => 1,
+            'business_license_file' => 1,
+            'bod_resolution_file' => 1,
+            'contract_file' => 1,
+        ];
+
+        $app_user = AppUser::find($app_user_id);
+
+        $seller_pending = SellerPending::where('app_user_id', $app_user_id)->first();
+
+        $pending_update = SellerPending::where('id', $seller_pending->id)->where($status)->first();
+        
+        if($pending_update != null) {
+            $app_user->seller_status = 1;
+            $app_user->save();
+            return redirect()->route('admin.personal-info.index')->withFlashSuccess(__('Seller has been approved successfully.'));
+        } else {
+            return redirect()->back()->withFlashDanger(__('KYC information does not complete'));
+        }
+    }
 }
