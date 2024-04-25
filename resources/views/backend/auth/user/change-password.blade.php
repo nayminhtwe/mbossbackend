@@ -2,6 +2,18 @@
 
 @section('title', __('Change Password for :name', ['name' => $user->name]))
 
+@push('after-styles')
+    <style>
+        label {
+            color: white
+        }
+
+        input {
+            color: white !important;
+        }
+    </style>
+@endpush
+
 @section('content')
     <x-forms.patch :action="route('admin.auth.user.change-password.update', $user)">
         <x-backend.card>
@@ -18,7 +30,8 @@
                     <label for="password" class="col-md-2 col-form-label">@lang('Password')</label>
 
                     <div class="col-md-10">
-                        <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="new-password" />
+                        <input type="password" name="password" id="password" class="form-control"
+                            placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="new-password" />
                     </div>
                 </div><!--form-group-->
 
@@ -26,7 +39,9 @@
                     <label for="password_confirmation" class="col-md-2 col-form-label">@lang('Password Confirmation')</label>
 
                     <div class="col-md-10">
-                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="new-password" />
+                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control"
+                            placeholder="{{ __('Password Confirmation') }}" maxlength="100" required
+                            autocomplete="new-password" />
                     </div>
                 </div><!--form-group-->
             </x-slot>

@@ -2,6 +2,22 @@
 
 @extends('backend.layouts.app')
 
+@push('after-styles')
+    <style>
+        select {
+            color: white !important;
+        }
+
+        select option {
+            color: white
+        }
+
+        input {
+            color: white !important;
+        }
+    </style>
+@endpush
+
 @section('title', __('Create Role'))
 
 @section('content')
