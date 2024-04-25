@@ -461,62 +461,62 @@
                                 <div class="col">
                                     <h4>Reference 2</h4>
                                     <div class="form-group">
-                                        <label for="reference_two_full_name">1. Full Name * :</label>
+                                        <label for="reference_two_full_name">1. Full Name :</label>
                                         <input type="text" name="reference_two_full_name" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_two_father_name">2. Father's Name * :</label>
+                                        <label for="reference_two_father_name">2. Father's Name :</label>
                                         <input type="text" name="reference_two_father_name" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_two_nrc">3. NRC Number * :</label>
+                                        <label for="reference_two_nrc">3. NRC Number :</label>
                                         <input type="text" name="reference_two_nrc" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_two_address">4. Address * :</label>
+                                        <label for="reference_two_address">4. Address :</label>
                                         <input type="text" name="reference_two_address" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_two_mobile">5. Mobile Number * :</label>
+                                        <label for="reference_two_mobile">5. Mobile Number :</label>
                                         <input type="text" name="reference_two_mobile" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_two_position">6. Position * :</label>
+                                        <label for="reference_two_position">6. Position :</label>
                                         <input type="text" name="reference_two_position" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_two_email">7. Email * :</label>
+                                        <label for="reference_two_email">7. Email :</label>
                                         <input type="email" name="reference_two_email" class="form-control" maxlength="100" />
                                     </div>
                                 </div>
                                 <div class="col">
                                     <h4>Reference 3</h4>
                                     <div class="form-group">
-                                        <label for="reference_three_full_name">1. Full Name * :</label>
+                                        <label for="reference_three_full_name">1. Full Name :</label>
                                         <input type="text" name="reference_three_full_name" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_three_father_name">2. Father's Name * :</label>
+                                        <label for="reference_three_father_name">2. Father's Name :</label>
                                         <input type="text" name="reference_three_father_name" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_three_nrc">3. NRC Number * :</label>
+                                        <label for="reference_three_nrc">3. NRC Number :</label>
                                         <input type="text" name="reference_three_nrc" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_three_address">4. Address * :</label>
+                                        <label for="reference_three_address">4. Address :</label>
                                         <input type="text" name="reference_three_address" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_three_mobile">5. Mobile Number * :</label>
+                                        <label for="reference_three_mobile">5. Mobile Number :</label>
                                         <input type="text" name="reference_three_mobile" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_three_position">6. Position * :</label>
+                                        <label for="reference_three_position">6. Position :</label>
                                         <input type="text" name="reference_three_position" class="form-control" maxlength="100" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="reference_three_email">7. Email * :</label>
+                                        <label for="reference_three_email">7. Email :</label>
                                         <input type="email" name="reference_three_email" class="form-control" maxlength="100" />
                                     </div>
                                 </div>

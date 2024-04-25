@@ -53,6 +53,7 @@
                 <li class="list-group-item">@lang('Discount Rate') : {{ $invoice->seller_discount_rate }} %</li>
                 <li class="list-group-item">@lang('Discounted Amount') : {{ $invoice->discounted_amount }}</li>
                 <li class="list-group-item">@lang('Service Fees') : {{ $invoice->service_fees }} %</li>
+                <li class="list-group-item">@lang('Service Fees Amount') : {{ $invoice->service_fee_amount }}</li>
                 <li class="list-group-item">@lang('Seller Receivable Amount') : {{ $invoice->seller_receivable_amount }}</li>
             </li>
 

@@ -49,6 +49,7 @@ class InvoiceResource extends JsonResource
             'seller_discount_rate' => $this->seller_discount_rate,
             'discounted_amount' => $this->discounted_amount,
             'service_fees' => $this->service_fees,
+            'service_fee_amount' => $this->service_fee_amount,
             'seller_receivable_amount' => $this->seller_receivable_amount,
             'seller_approval' => $this->seller_approval
             // 'original_invoice' => $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'] . Storage::url($this->photos->photo)

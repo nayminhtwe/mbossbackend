@@ -44,7 +44,8 @@ class Invoice extends Model
         'seller_receivable_amount',
         'seller_approval',
         'day_delays',
-        'seller_approval'
+        'seller_approval',
+        'service_fee_amount'
     ];
 
     public function photos()

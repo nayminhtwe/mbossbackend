@@ -43,10 +43,12 @@ class InvoiceController extends Controller
             'invoice_issued_date' => 'required',
             'invoice_selling_date' => 'required',
             'remaining_day' => 'required',
+            'day_delays' => 'required',
             'daily_discount_rate' => 'required',
             'seller_discount_rate' => 'required',
             'discounted_amount' => 'required|integer',
             'service_fees' => 'required',
+            'service_fee_amount' => 'required|integer',
             'seller_receivable_amount' => 'required|integer',
         ]);
 
@@ -58,10 +60,12 @@ class InvoiceController extends Controller
         $invoice_issued_date = $request->input('invoice_issued_date');
         $invoice_selling_date = $request->input('invoice_selling_date');
         $remaining_day = $request->input('remaining_day');
+        $day_delays = $request->input('day_delays');
         $daily_discount_rate = $request->input('daily_discount_rate');
         $seller_discount_rate = $request->input('seller_discount_rate');
         $discounted_amount = $request->input('discounted_amount');
         $service_fees = $request->input('service_fees');
+        $service_fee_amount = $request->input('service_fee_amount');
         $seller_receivable_amount = $request->input('seller_receivable_amount');
 
         $invoice = Invoice::findOrfail($id);
@@ -73,10 +77,12 @@ class InvoiceController extends Controller
         $invoice->invoice_issued_date = $invoice_issued_date;
         $invoice->invoice_selling_date = $invoice_selling_date;
         $invoice->remaining_day = $remaining_day;
+        $invoice->day_delays = $day_delays;
         $invoice->daily_discount_rate = $daily_discount_rate;
         $invoice->seller_discount_rate = $seller_discount_rate;
         $invoice->discounted_amount = $discounted_amount;
         $invoice->service_fees = $service_fees;
+        $invoice->service_fee_amount = $service_fee_amount;
         $invoice->seller_receivable_amount = $seller_receivable_amount;
         $invoice->status = 1;
         $invoice->save();
@@ -196,6 +202,7 @@ class InvoiceController extends Controller
         $seller_discount_rate = $request->input('seller_discount_rate');
         $discounted_amount = $request->input('discounted_amount');
         $service_fees = $request->input('service_fees');
+        $service_fee_amount = $request->input('service_fee_amount');
         $seller_receivable_amount = $request->input('seller_receivable_amount');
 
         DB::beginTransaction();
@@ -220,6 +227,7 @@ class InvoiceController extends Controller
                 'seller_discount_rate' => $seller_discount_rate,
                 'discounted_amount' => $discounted_amount,
                 'service_fees' => $service_fees,
+                'service_fee_amount' => $service_fee_amount,
                 'seller_receivable_amount' => $seller_receivable_amount
             ]);
 

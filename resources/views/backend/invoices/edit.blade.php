@@ -77,8 +77,7 @@
                     <label for="date" class="col-md-2 col-form-label">@lang('Due Date')</label>
 
                     <div class="col-md-10">
-                        <input type="date" name="date" class="form-control" placeholder="{{ __('Due Date') }}"
-                             value="{{ old('date') ?? \Carbon\Carbon::parse($invoice->date)->toDateString()}}" maxlength="100" />
+                        <input type="date" name="date" class="form-control" placeholder="{{ __('Due Date') }}" value="{{ old('date') ?? $invoice->date}}" maxlength="100" />
                     </div>
                 </div>
                 <!--form-group-->
