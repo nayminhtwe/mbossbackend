@@ -512,12 +512,19 @@
                         <div class="row" style="padding: 20px">
                             <div class="col-lg-12 margin-tb">
                                 <div class="pull-left">
-                                    @if ($seller_personal_info->app_user->seller_contract_file->contract != null)
+                                    {{-- @if ($seller_personal_info->app_user->seller_contract_file->contract != null)
                                         <img src="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_contract_file->contract) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_contract_file->contract) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
-                                    @endif
+                                    @endif --}}
+
+                                    @foreach ($seller_personal_info->app_user->seller_contract_files as $file)
+                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -530,12 +537,19 @@
                         <div class="row" style="padding: 20px">
                             <div class="col-lg-12 margin-tb">
                                 <div class="pull-left">
-                                    @if ($seller_personal_info->app_user->seller_other_file->other != null)
+                                    {{-- @if ($seller_personal_info->app_user->seller_other_file->other != null)
                                         <img src="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_other_file->other) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_other_file->other) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
-                                    @endif
+                                    @endif --}}
+
+                                    @foreach ($seller_personal_info->app_user->seller_other_files as $file)
+                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
