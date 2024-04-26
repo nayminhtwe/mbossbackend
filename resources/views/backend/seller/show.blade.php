@@ -393,7 +393,7 @@
                                             height="250" width="250" onclick="this.requestFullscreen()">
                                     @endif --}}
 
-                                    @foreach ($seller_personal_info->app_user->seller_company_extract_file as $file)
+                                    @foreach ($seller_personal_info->app_user->seller_company_extract_files as $file)
                                         <img src="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
@@ -418,7 +418,7 @@
                                             height="250" width="250" onclick="this.requestFullscreen()">
                                     @endif --}}
 
-                                    @foreach ($seller_personal_info->app_user->seller_company_billing_statement_file as $file)
+                                    @foreach ($seller_personal_info->app_user->seller_company_billing_statement_files as $file)
                                         <img src="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
@@ -468,7 +468,7 @@
                                             height="250" width="250" onclick="this.requestFullscreen()">
                                     @endif --}}
 
-                                    @foreach ($seller_personal_info->app_user->seller_bod_resolution_file as $file)
+                                    @foreach ($seller_personal_info->app_user->seller_bod_resolution_files as $file)
                                         <img src="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
