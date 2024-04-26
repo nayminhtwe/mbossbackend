@@ -19,7 +19,7 @@ class AppUser extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'userID', 'phone', 'email', 'firstName', 'profilePictureURL', 'appIdentifier', 'password', 'seller_status', 'lastName', 'nrc', 'date_of_birth', 'permanentAddress', 'currentAddress', 'age', 'bankName', 'bankAcc', 'bankNameOptional', 'bankAccOptional', 'buyer_status', 'seller_request_count', 'buyer_request_count', 'seller_submitted', 'buyer_submitted','seller_buyer_status','wallet'
+        'userID', 'phone', 'email', 'firstName', 'profilePictureURL', 'appIdentifier', 'password', 'seller_status', 'lastName', 'nrc', 'date_of_birth', 'permanentAddress', 'currentAddress', 'age', 'bankName', 'bankAcc', 'bankNameOptional', 'bankAccOptional', 'buyer_status', 'seller_request_count', 'buyer_request_count', 'seller_submitted', 'buyer_submitted', 'seller_buyer_status', 'wallet'
     ];
 
     /**
@@ -63,6 +63,11 @@ class AppUser extends Authenticatable implements MustVerifyEmail
     public function seller_nrc_file()
     {
         return $this->hasOne(SellerNrcFile::class);
+    }
+
+    public function seller_nrc_files()
+    {
+        return $this->hasMany(SellerNrcFile::class);
     }
 
     public function seller_company_registration_file()

@@ -15,7 +15,7 @@
     </x-slot>
 
     <x-slot name="body">
-        
+
         <ul class="list-group">
 
             <li class="list-group-item">
@@ -28,7 +28,7 @@
 
                     {{-- <dt class="col-sm-3">2. App User Name</dt>
                     <dd class="col-sm-9">: {{ $kyc->app_user->firstName .' '. $kyc->app_user->lastName }}</dd> --}}
-                    
+
                     <dt class="col-sm-3">2. Father's Name</dt>
                     <dd class="col-sm-9">: {{ $seller_personal_info->father_name }}</dd>
 
@@ -305,15 +305,19 @@
                 <div class="row" style="padding: 20px">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            @if($seller_personal_info->app_user->seller_nrc_file->nrc_soft_copy != null)
+                            {{-- @if($seller_personal_info->app_user->seller_nrc_file->nrc_soft_copy != null)
                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_nrc_file->nrc_soft_copy) }}" class="img-fluid"
                                 alt="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_nrc_file->nrc_soft_copy) }}" height="250" width="250" onclick="this.requestFullscreen()">
-                            @endif
+                            @endif --}}
+                            @foreach ($seller_personal_info->app_user->seller_nrc_files as $file)
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}" class="img-fluid"
+                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}" height="250" width="250" onclick="this.requestFullscreen()">
+                            @endforeach
                         </div>
                     </div>
                 </div>
                 @endif
-                
+
                 @if ($seller_personal_info->app_user->seller_company_registration_file)
                 <div class="h5 text-success">
                     @lang('2. Soft copy of company registration')
@@ -345,7 +349,7 @@
                     </div>
                 </div>
                 @endif
-                
+
                 @if ($seller_personal_info->app_user->seller_company_billing_statement_file)
                 <div class="h5 text-success">
                     @lang('4. Billing Statement')
@@ -361,7 +365,7 @@
                     </div>
                 </div>
                 @endif
-                
+
                 @if ($seller_personal_info->app_user->seller_business_license_file)
                 <div class="h5 text-success">
                     @lang('5. Relevant Business License (eg - YCDC)')
@@ -377,7 +381,7 @@
                     </div>
                 </div>
                 @endif
-                
+
                 @if ($seller_personal_info->app_user->seller_bod_resolution_file)
                     <div class="h5 text-success">
                         @lang('6. BOD resolution to open platform trading account and appointment of an authorized person to perform all action relating with invoice selling in M')
@@ -393,7 +397,7 @@
                         </div>
                     </div>
                 @endif
-                
+
                 @if($seller_personal_info->app_user->seller_import_export_license_file)
                     <div class="h5 text-success">
                         @lang('7. Import/Export business')
@@ -409,7 +413,7 @@
                         </div>
                     </div>
                 @else
-                    
+
                 @endif
 
                 @if ($seller_personal_info->app_user->seller_contract_file)
@@ -445,10 +449,10 @@
                 @endif
 
             </li>
-            
+
         </ul>
 
-        
+
     </x-slot>
 
     {{-- <x-slot name="footer">
