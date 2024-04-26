@@ -6,7 +6,7 @@
     <x-forms.post :action="route('admin.personal-info.store')" method="POST" name=confirm-item enctype="multipart/form-data">
         <x-backend.card>
             <x-slot name="header">
-                @lang('Seller Personal Info Register for ') <mark><strong>{{ $app_user->firstName }}</strong></mark>
+                @lang('Seller Personal Info Register for ') <mark><strong>{{ $app_user->firstName . ' ' . $app_user->lastName }}</strong></mark>
             </x-slot>
 
             <x-slot name="headerActions">
