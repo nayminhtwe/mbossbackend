@@ -75,9 +75,19 @@ class AppUser extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(SellerCompanyRegistrationFile::class);
     }
 
+    public function seller_company_registration_files()
+    {
+        return $this->hasMany(SellerCompanyRegistrationFile::class);
+    }
+
     public function seller_company_extract_file()
     {
         return $this->hasOne(SellerCompanyExtractFile::class);
+    }
+
+    public function seller_company_extract_files()
+    {
+        return $this->hasMany(SellerCompanyExtractFile::class);
     }
 
     public function seller_company_billing_statement_file()
@@ -85,9 +95,19 @@ class AppUser extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(SellerCompanyBillingStatementFile::class);
     }
 
+    public function seller_company_billing_statement_files()
+    {
+        return $this->hasMany(SellerCompanyBillingStatementFile::class);
+    }
+
     public function seller_business_license_file()
     {
         return $this->hasOne(SellerBusinessLicenseFile::class);
+    }
+
+    public function seller_business_license_files()
+    {
+        return $this->hasMany(SellerBusinessLicenseFile::class);
     }
 
     public function seller_bod_resolution_file()
@@ -95,9 +115,19 @@ class AppUser extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(SellerBodResolutionFile::class);
     }
 
+    public function seller_bod_resolution_files()
+    {
+        return $this->hasMany(SellerBodResolutionFile::class);
+    }
+
     public function seller_import_export_license_file()
     {
         return $this->hasOne(SellerImportExportLicenseFile::class);
+    }
+
+    public function seller_import_export_license_files()
+    {
+        return $this->hasMany(SellerImportExportLicenseFile::class);
     }
 
     public function seller_contract_file()
