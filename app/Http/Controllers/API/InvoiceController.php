@@ -203,7 +203,10 @@ class InvoiceController extends Controller
         ->when($terms, function ($query) use ($terms) {
             $query->where('terms','<=', $terms);
         })
-        ->where('app_user_id', '!=', $app_user->id)
+        ->when($app_user->id, function ($query) use ($app_user->id) {
+            $query->where('app_user_id','!=', $app_user->id);
+        })    
+        // ->where('app_user_id', '!=', $app_user->id)
         ->where('seller_approval', 1)
         ->where('purchase', 0)
         ->orderBy('id', 'desc')
