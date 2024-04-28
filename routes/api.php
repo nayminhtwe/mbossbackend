@@ -27,17 +27,19 @@ Route::group(['prefix' => 'v1'], function () {
     // Route::post('code_request', [AppUserController::class, 'code_request']);
     Route::post('register_with_phone', [AppUserController::class, 'register_with_phone']);
     Route::post('login_with_phone', [AppUserController::class, 'login_with_phone']);
+    Route::get('categories', [CategoryController::class, 'categories']);
+    Route::get('invoice_by_category', [InvoiceController::class, 'invoice_by_category']);
 
     Route::group([ 'middleware' => 'auth.user-api' ], function () {
 
         Route::get('profile', [AppUserController::class, 'profile']);
-        Route::get('categories', [CategoryController::class, 'categories']);
+        // Route::get('categories', [CategoryController::class, 'categories']);
         Route::post('invoice', [InvoiceController::class, 'store']);
         Route::get('all_invoice_list', [InvoiceController::class, 'index']);
         Route::get('my_invoice_list', [InvoiceController::class, 'my_invoice_list']);
         Route::post('photo', [AppUserController::class, 'photo']);
         Route::get('invoice/{invoice_id}', [InvoiceController::class, 'invoice']);
-        Route::get('invoice_by_category', [InvoiceController::class, 'invoice_by_category']);
+        // Route::get('invoice_by_category', [InvoiceController::class, 'invoice_by_category']);
         Route::post('file_upload', [FileUploadController::class, 'store']);
         Route::post('invoice_upload', [InvoiceController::class, 'invoice_upload']);
         Route::post('invoice_purchase', [InvoiceController::class, 'invoice_purchase']);
