@@ -442,144 +442,207 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="nrc_soft_copy">1. Soft copy of NRC * :</label>
-                                    <input type="file" name="nrc_soft_copy" class="form-control" />
+                                    <label for="nrc_soft_copys">1. Soft copy of NRC * :</label>
+                                    <input type="file" name="nrc_soft_copys[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_nrc_file->nrc_soft_copy != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_nrc_file->nrc_soft_copy != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_nrc_file->nrc_soft_copy) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_nrc_file->nrc_soft_copy) }}" height="200" width="200">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_nrc_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="company_registration_soft_copy">2. Soft copy of company registration * :</label>
-                                    <input type="file" name="company_registration_soft_copy" class="form-control" />
+                                    <label for="company_registration_soft_copys">2. Soft copy of company registration * :</label>
+                                    <input type="file" name="company_registration_soft_copys[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_company_registration_file->company_registration_soft_copy != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_company_registration_file->company_registration_soft_copy != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_company_registration_file->company_registration_soft_copy) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_company_registration_file->company_registration_soft_copy) }}" height="200" width="200">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_company_registration_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->company_registration_soft_copy) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->company_registration_soft_copy) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="company_extracts_soft_copy">3. Soft copy of company extracts * :</label>
-                                    <input type="file" name="company_extracts_soft_copy" class="form-control" />
+                                    <label for="company_extracts_soft_copys">3. Soft copy of company extracts * :</label>
+                                    <input type="file" name="company_extracts_soft_copys[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_company_extract_file->company_extracts_soft_copy != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_company_extract_file->company_extracts_soft_copy != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_company_extract_file->company_extracts_soft_copy) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_company_extract_file->company_extracts_soft_copy) }}" height="200" width="200">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_company_extract_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="billing_statement">4. At least one updated Billing Statement billed to the Company Address 1) Utility Bills (i.e. Electric, Water,etc.) * :</label>
-                                    <input type="file" name="billing_statement" class="form-control" />
+                                    <label for="billing_statements">4. At least one updated Billing Statement billed to the Company Address 1) Utility Bills (i.e. Electric, Water,etc.) * :</label>
+                                    <input type="file" name="billing_statements[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_company_billing_statement_file->billing_statement != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_company_billing_statement_file->billing_statement != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_company_billing_statement_file->billing_statement) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_company_billing_statement_file->billing_statement) }}" height="200" width="200">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_company_billing_statement_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="business_license">5. Relevant Business License (eg - YCDC) * :</label>
-                                    <input type="file" name="business_license" class="form-control" />
+                                    <label for="business_licenses">5. Relevant Business License (eg - YCDC) * :</label>
+                                    <input type="file" name="business_licenses[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_business_license_file->business_license != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_business_license_file->business_license != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_business_license_file->business_license) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_business_license_file->business_license) }}" height="200" width="200">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_business_license_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="bod_resolution">6. BOD resolution to open platform trading account and appointment of an authorized person to perform all action relating with invoice selling in M * :</label>
-                                    <input type="file" name="bod_resolution" class="form-control" />
+                                    <label for="bod_resolutions">6. BOD resolution to open platform trading account and appointment of an authorized person to perform all action relating with invoice selling in M * :</label>
+                                    <input type="file" name="bod_resolutions[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_bod_resolution_file->bod_resolution != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_bod_resolution_file->bod_resolution != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_bod_resolution_file->bod_resolution) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_bod_resolution_file->bod_resolution) }}" height="200" width="200">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_bod_resolution_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="import_export_license">7. For Import/Export business, licenses of import/export are required :</label>
-                                    <input type="file" name="import_export_license" class="form-control" />
+                                    <label for="import_export_licenses">7. For Import/Export business, licenses of import/export are required :</label>
+                                    <input type="file" name="import_export_licenses[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_import_export_license_file != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_import_export_license_file != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license) }}" height="250" width="250">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_import_export_license_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->import_export_license) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->import_export_license) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="contract">8. For Contract * :</label>
-                                    <input type="file" name="contract" class="form-control" />
+                                    <label for="contracts">8. For Contract * :</label>
+                                    <input type="file" name="contracts[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_contract_file != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_contract_file != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_contract_file->contract) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_contract_file->contract) }}" height="250" width="250">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_contract_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="other">9. Others :</label>
-                                    <input type="file" name="other" class="form-control" />
+                                    <label for="others">9. Others :</label>
+                                    <input type="file" name="others[]" class="form-control" multiple/>
                                 </div>
                                 <div class="row" style="padding: 20px">
                                     <div class="col-lg-12 margin-tb">
                                         <div class="pull-left">
-                                            @if($sellerPersonalInfo->app_user->seller_other_file != null)
+                                            {{-- @if($sellerPersonalInfo->app_user->seller_other_file != null)
                                                 <img src="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_other_file->other) }}" class="img-fluid"
                                                 alt="{{ \Illuminate\Support\Facades\Storage::url($sellerPersonalInfo->app_user->seller_other_file->other) }}" height="250" width="250">
-                                            @endif
+                                            @endif --}}
+
+                                            @foreach ($sellerPersonalInfo->app_user->seller_other_files as $file)
+                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
+                                                    class="img-fluid"
+                                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
+                                                    height="200" width="200" onclick="this.requestFullscreen()">
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>

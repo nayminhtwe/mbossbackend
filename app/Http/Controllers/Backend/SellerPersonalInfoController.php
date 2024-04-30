@@ -8,6 +8,13 @@ use App\Models\AppUser;
 use App\Models\SellerPersonalInfo;
 use App\Models\SellerBusinessInfo;
 use App\Models\SellerImportExportLicenseFile;
+use App\Models\SellerNrcFile;
+use App\Models\SellerCompanyRegistrationFile;
+use App\Models\SellerCompanyExtractFile;
+use App\Models\SellerCompanyBillingStatementFile;
+use App\Models\SellerBusinessLicenseFile;
+use App\Models\SellerBodResolutionFile;
+use App\Models\SellerContractFile;
 use App\Models\SellerOtherFile;
 use App\Models\SellerPending;
 use App\Models\FileUpload;
@@ -224,85 +231,173 @@ class SellerPersonalInfoController extends Controller
             'reference_three_email' => $validated['reference_three_email'],
         ]);
 
-        if($request->hasFile('nrc_soft_copy')) {
-            Storage::delete($sellerPersonalInfo->app_user->seller_nrc_file->nrc_soft_copy);
-            $nrc_soft_copy = $request->nrc_soft_copy->store('public/attachment');
-            $sellerPersonalInfo->app_user->seller_nrc_file->nrc_soft_copy = $nrc_soft_copy;
-            $sellerPersonalInfo->app_user->seller_nrc_file->save();
-        }
+        if($request->hasFile('nrc_soft_copys')) {
+            $nrc_soft_copys = $request->file('nrc_soft_copys');
+            foreach($sellerPersonalInfo->app_user->seller_nrc_files as $file) {
+                Storage::delete($file->nrc_soft_copy);
+            }
+            $sellerPersonalInfo->app_user->seller_nrc_files()->delete();
+            foreach($request->nrc_soft_copys as $nrc_soft_copy) {
+                $image_file = $nrc_soft_copy->store('public/attachment');
 
-        if($request->hasFile('company_registration_soft_copy')) {
-            Storage::delete($sellerPersonalInfo->app_user->seller_company_registration_file->company_registration_soft_copy);
-            $company_registration_soft_copy = $request->company_registration_soft_copy->store('public/attachment');
-            $sellerPersonalInfo->app_user->seller_company_registration_file->company_registration_soft_copy = $company_registration_soft_copy;
-            $sellerPersonalInfo->app_user->seller_company_registration_file->save();
-        }
-
-        if($request->hasFile('company_extracts_soft_copy')) {
-            Storage::delete($sellerPersonalInfo->app_user->seller_company_extract_file->company_extracts_soft_copy);
-            $company_extracts_soft_copy = $request->company_extracts_soft_copy->store('public/attachment');
-            $sellerPersonalInfo->app_user->seller_company_extract_file->company_extracts_soft_copy = $company_extracts_soft_copy;
-            $sellerPersonalInfo->app_user->seller_company_extract_file->save();
-        }
-
-        if($request->hasFile('billing_statement')) {
-            Storage::delete($sellerPersonalInfo->app_user->seller_company_billing_statement_file->billing_statement);
-            $billing_statement = $request->billing_statement->store('public/attachment');
-            $sellerPersonalInfo->app_user->seller_company_billing_statement_file->billing_statement = $billing_statement;
-            $sellerPersonalInfo->app_user->seller_company_billing_statement_file->save();
-        }
-
-        if($request->hasFile('business_license')) {
-            Storage::delete($sellerPersonalInfo->app_user->seller_business_license_file->business_license);
-            $business_license = $request->business_license->store('public/attachment');
-            $sellerPersonalInfo->app_user->seller_business_license_file->business_license = $business_license;
-            $sellerPersonalInfo->app_user->seller_business_license_file->save();
-        }
-        
-        if($request->hasFile('bod_resolution')) {
-            Storage::delete($sellerPersonalInfo->app_user->seller_bod_resolution_file->bod_resolution);
-            $bod_resolution = $request->bod_resolution->store('public/attachment');
-            $sellerPersonalInfo->app_user->seller_bod_resolution_file->bod_resolution = $bod_resolution;
-            $sellerPersonalInfo->app_user->seller_bod_resolution_file->save();
-        }
-        
-        if($request->hasFile('import_export_license')) {
-            if(!!$sellerPersonalInfo->app_user->seller_import_export_license_file) 
-            {
-                Storage::delete($sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license);
-                $import_export_license = $request->import_export_license->store('public/attachment');
-                $sellerPersonalInfo->app_user->seller_import_export_license_file->import_export_license = $import_export_license;
-                $sellerPersonalInfo->app_user->seller_import_export_license_file->save();
-            } else {
-                $import_export_license = $request->import_export_license->store('public/attachment');
-                $seller_import_export_license = SellerImportExportLicenseFile::create([
+                SellerNrcFile::create([
                     'app_user_id' => $sellerPersonalInfo->app_user->id,
-                    'import_export_license' => $import_export_license,
+                    'nrc_soft_copy' => $image_file,
                 ]);
             }
         }
 
-        if($request->hasFile('contract')) {
-            Storage::delete($sellerPersonalInfo->app_user->seller_contract_file->contract);
-            $seller_contract = $request->contract->store('public/attachment');
-            $sellerPersonalInfo->app_user->seller_contract_file->contract = $seller_contract;
-            $sellerPersonalInfo->app_user->seller_contract_file->save();
+        if($request->hasFile('company_registration_soft_copys')) {
+            $company_registration_soft_copys = $request->file('company_registration_soft_copys');
+            foreach($sellerPersonalInfo->app_user->seller_company_registration_files as $file) {
+                Storage::delete($file->company_registration_soft_copy);
+            }
+            $sellerPersonalInfo->app_user->seller_company_registration_files()->delete();
+            foreach($request->company_registration_soft_copys as $company_registration_soft_copy) {
+                $image_file = $company_registration_soft_copy->store('public/attachment');
+
+                SellerCompanyRegistrationFile::create([
+                    'app_user_id' => $sellerPersonalInfo->app_user->id,
+                    'company_registration_soft_copy' => $image_file,
+                ]);
+            }
         }
 
-        if($request->hasFile('other')) {
+        if($request->hasFile('company_extracts_soft_copys')) {
+            $company_extracts_soft_copys = $request->file('company_extracts_soft_copys');
+            foreach($sellerPersonalInfo->app_user->seller_company_extract_files as $file) {
+                Storage::delete($file->company_extracts_soft_copy);
+            }
+            $sellerPersonalInfo->app_user->seller_company_extract_files()->delete();
+            foreach($request->company_extracts_soft_copys as $company_extracts_soft_copy) {
+                $image_file = $company_extracts_soft_copy->store('public/attachment');
+
+                SellerCompanyExtractFile::create([
+                    'app_user_id' => $sellerPersonalInfo->app_user->id,
+                    'company_extracts_soft_copy' => $image_file,
+                ]);
+            }
+        }
+
+        if($request->hasFile('billing_statements')) {
+            $billing_statements = $request->file('billing_statements');
+            foreach($sellerPersonalInfo->app_user->seller_company_billing_statement_files as $file) {
+                Storage::delete($file->billing_statement);
+            }
+            $sellerPersonalInfo->app_user->seller_company_billing_statement_files()->delete();
+            foreach($request->billing_statements as $billing_statement) {
+                $image_file = $billing_statement->store('public/attachment');
+
+                SellerCompanyBillingStatementFile::create([
+                    'app_user_id' => $sellerPersonalInfo->app_user->id,
+                    'billing_statement' => $image_file,
+                ]);
+            }
+        }
+
+        if($request->hasFile('business_licenses')) {
+            $business_licenses = $request->file('business_licenses');
+            foreach($sellerPersonalInfo->app_user->seller_business_license_files as $file) {
+                Storage::delete($file->business_license);
+            }
+            $sellerPersonalInfo->app_user->seller_business_license_files()->delete();
+            foreach($request->business_licenses as $business_license) {
+                $image_file = $business_license->store('public/attachment');
+
+                SellerBusinessLicenseFile::create([
+                    'app_user_id' => $sellerPersonalInfo->app_user->id,
+                    'business_license' => $image_file,
+                ]);
+            }
+        }
+        
+        if($request->hasFile('bod_resolutions')) {
+            $bod_resolutions = $request->file('bod_resolutions');
+            foreach($sellerPersonalInfo->app_user->seller_bod_resolution_files as $file) {
+                Storage::delete($file->bod_resolution);
+            }
+            $sellerPersonalInfo->app_user->seller_bod_resolution_files()->delete();
+            foreach($request->bod_resolutions as $bod_resolution) {
+                $image_file = $bod_resolution->store('public/attachment');
+
+                SellerBodResolutionFile::create([
+                    'app_user_id' => $sellerPersonalInfo->app_user->id,
+                    'bod_resolution' => $image_file,
+                ]);
+            }
+        }
+        
+        if($request->hasFile('import_export_licenses')) {
+            $import_export_licenses = $request->file('import_export_licenses');
+
+            if(!!$sellerPersonalInfo->app_user->seller_import_export_license_file) 
+            {
+                foreach($sellerPersonalInfo->app_user->seller_import_export_license_files as $file) {
+                    Storage::delete($file->import_export_license);
+                }
+                $sellerPersonalInfo->app_user->seller_import_export_license_files()->delete();
+                foreach($request->import_export_licenses as $import_export_license) {
+                    $image_file = $import_export_license->store('public/attachment');
+
+                    SellerImportExportLicenseFile::create([
+                        'app_user_id' => $sellerPersonalInfo->app_user->id,
+                        'import_export_license' => $image_file,
+                    ]);
+                }
+            } else {
+                foreach($import_export_licenses as $import_export_license) {
+                    $image_file = $import_export_license->store('public/attachment');
+        
+                    SellerImportExportLicenseFile::create([
+                        'app_user_id' => $sellerPersonalInfo->app_user->id,
+                        'import_export_license' => $image_file,
+                    ]);
+                }
+            }
+        }
+
+        if($request->hasFile('contracts')) {
+            $contracts = $request->file('contracts');
+            foreach($sellerPersonalInfo->app_user->seller_contract_files as $file) {
+                Storage::delete($file->contract);
+            }
+            $sellerPersonalInfo->app_user->seller_contract_files()->delete();
+            foreach($request->contracts as $contract) {
+                $image_file = $contract->store('public/attachment');
+
+                SellerContractFile::create([
+                    'app_user_id' => $sellerPersonalInfo->app_user->id,
+                    'contract' => $image_file,
+                ]);
+            }
+        }
+
+        if($request->hasFile('others')) {
+            $others = $request->file('others');
+
             if(!!$sellerPersonalInfo->app_user->seller_other_file) 
             {
-                Storage::delete($sellerPersonalInfo->app_user->seller_other_file->other);
-                $seller_other = $request->other->store('public/attachment');
-                $sellerPersonalInfo->app_user->seller_other_file->other = $seller_other;
-                $sellerPersonalInfo->app_user->seller_other_file->save();
-            } else {
-                $seller_other = $request->other->store('public/attachment');
-                $seller_contract = SellerOtherFile::create([
-                    'app_user_id' => $sellerPersonalInfo->app_user->id,
-                    'other' => $seller_other,
-                ]);
+                foreach($sellerPersonalInfo->app_user->seller_other_files as $file) {
+                    Storage::delete($file->other);
+                }
+                $sellerPersonalInfo->app_user->seller_other_files()->delete();
+                foreach($request->others as $other) {
+                    $image_file = $other->store('public/attachment');
 
+                    SellerOtherFile::create([
+                        'app_user_id' => $sellerPersonalInfo->app_user->id,
+                        'other' => $image_file,
+                    ]);
+                }
+            } else {
+                foreach($others as $other) {
+                    $image_file = $other->store('public/attachment');
+        
+                    SellerOtherFile::create([
+                        'app_user_id' => $sellerPersonalInfo->app_user->id,
+                        'other' => $image_file,
+                    ]);
+                }
             }
         }
 
