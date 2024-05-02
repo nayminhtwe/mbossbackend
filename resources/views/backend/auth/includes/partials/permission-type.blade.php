@@ -20,9 +20,9 @@
 @endif
 
 @if ($categories->where('type', $type)->count())
-    <h5 class="mb-3 text-white">@lang('Permission Categories')</h5>
+    <h5 class="mb-3 text">@lang('Permission Categories')</h5>
 
-    <ul class="permission-tree m-0 p-0 list-unstyled text-white">
+    <ul class="permission-tree m-0 p-0 list-unstyled text">
         @foreach ($categories->where('type', $type) as $permission)
             <li>
                 <input type="checkbox" name="permissions[]"
@@ -39,5 +39,5 @@
 @endif
 
 @if (!$general->where('type', $type)->count() && !$categories->where('type', $type)->count())
-    <p class="mb-0 text-white"><em>@lang('There are no additional permissions to choose from for this type.')</em></p>
+    <p class="mb-0 text"><em>@lang('There are no additional permissions to choose from for this type.')</em></p>
 @endif

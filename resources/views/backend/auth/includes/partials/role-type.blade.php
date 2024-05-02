@@ -29,5 +29,5 @@
         @endif
     @endif
 @empty
-    <p class="mb-0 text-white"><em>@lang('There are no roles to choose from for this type.')</em></p>
+    <p class="mb-0 text"><em>@lang('There are no roles to choose from for this type.')</em></p>
 @endforelse

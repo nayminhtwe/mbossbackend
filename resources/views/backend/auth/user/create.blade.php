@@ -18,9 +18,9 @@
             <x-slot name="body">
                 <div x-data="{ userType: '{{ $model::TYPE_USER }}' }">
                     <div class="form-group row">
-                        <label for="name" class="col-md-2 col-form-label text-white">@lang('Type')</label>
+                        <label for="name" class="col-md-2 col-form-label text">@lang('Type')</label>
 
-                        <div class="col-md-10 text-white">
+                        <div class="col-md-10 text">
                             <select name="type" class="form-control" required
                                 x-on:change="userType = $event.target.value">
                                 <option value="{{ $model::TYPE_USER }}">@lang('User')</option>
@@ -30,7 +30,7 @@
                     </div><!--form-group-->
 
                     <div class="form-group row">
-                        <label for="name" class="col-md-2 col-form-label text-white">@lang('Name')</label>
+                        <label for="name" class="col-md-2 col-form-label text">@lang('Name')</label>
 
                         <div class="col-md-10">
                             <input type="text" name="name" class="form-control" placeholder="{{ __('Name') }}"
@@ -39,7 +39,7 @@
                     </div><!--form-group-->
 
                     <div class="form-group row">
-                        <label for="email" class="col-md-2 col-form-label text-white">@lang('E-mail Address')</label>
+                        <label for="email" class="col-md-2 col-form-label text">@lang('E-mail Address')</label>
 
                         <div class="col-md-10">
                             <input type="email" name="email" class="form-control"
@@ -49,7 +49,7 @@
                     </div><!--form-group-->
 
                     <div class="form-group row">
-                        <label for="password" class="col-md-2 col-form-label text-white">@lang('Password')</label>
+                        <label for="password" class="col-md-2 col-form-label text">@lang('Password')</label>
 
                         <div class="col-md-10">
                             <input type="password" name="password" id="password" class="form-control"
@@ -59,7 +59,7 @@
 
                     <div class="form-group row">
                         <label for="password_confirmation"
-                            class="col-md-2 col-form-label text-white">@lang('Password Confirmation')</label>
+                            class="col-md-2 col-form-label text">@lang('Password Confirmation')</label>
 
                         <div class="col-md-10">
                             <input type="password" name="password_confirmation" id="password_confirmation"
@@ -69,7 +69,7 @@
                     </div><!--form-group-->
 
                     <div class="form-group row">
-                        <label for="active" class="col-md-2 col-form-label text-white">@lang('Active')</label>
+                        <label for="active" class="col-md-2 col-form-label text">@lang('Active')</label>
 
                         <div class="col-md-10">
                             <div class="form-check">
@@ -82,7 +82,7 @@
                     <div x-data="{ emailVerified: false }">
                         <div class="form-group row">
                             <label for="email_verified"
-                                class="col-md-2 col-form-label text-white">@lang('E-mail Verified')</label>
+                                class="col-md-2 col-form-label text">@lang('E-mail Verified')</label>
 
                             <div class="col-md-10">
                                 <div class="form-check">
@@ -96,7 +96,7 @@
                         <div x-show="!emailVerified">
                             <div class="form-group row">
                                 <label for="send_confirmation_email"
-                                    class="col-md-2 col-form-label text-white">@lang('Send Confirmation E-mail')</label>
+                                    class="col-md-2 col-form-label text">@lang('Send Confirmation E-mail')</label>
 
                                 <div class="col-md-10">
                                     <div class="form-check">

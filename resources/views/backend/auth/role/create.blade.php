@@ -18,7 +18,7 @@
             <x-slot name="body">
                 <div x-data="{ userType: '{{ $model::TYPE_USER }}' }">
                     <div class="form-group row">
-                        <label for="name" class="col-md-2 col-form-label text-white">@lang('Type')</label>
+                        <label for="name" class="col-md-2 col-form-label text">@lang('Type')</label>
 
                         <div class="col-md-10">
                             <select name="type" class="form-control" required
@@ -30,7 +30,7 @@
                     </div><!--form-group-->
 
                     <div class="form-group row">
-                        <label for="name" class="col-md-2 col-form-label text-white">@lang('Name')</label>
+                        <label for="name" class="col-md-2 col-form-label text">@lang('Name')</label>
 
                         <div class="col-md-10">
                             <input type="text" name="name" class="form-control" placeholder="{{ __('Name') }}"

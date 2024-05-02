@@ -19,7 +19,7 @@
                 <div x-data="{ userType: '{{ $model::TYPE_ADMIN }}' }">
 
                     <div class="form-group row">
-                        <label for="name" class="col-md-2 col-form-label text-white">@lang('Name')</label>
+                        <label for="name" class="col-md-2 col-form-label text">@lang('Name')</label>
 
                         <div class="col-md-10">
                             <input type="text" name="name" class="form-control" placeholder="{{ __('Payer Name') }}"
@@ -29,7 +29,7 @@
                     <!--form-group-->
 
                     <div class="form-group row">
-                        <label for="images" class="col-md-2 col-form-label text-white">@lang('Images')</label>
+                        <label for="images" class="col-md-2 col-form-label text">@lang('Images')</label>
 
                         <div class="col-md-10 text-white">
                             <input type="file" name="images" placeholder="{{ __('Payer Image') }}" required />
