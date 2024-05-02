@@ -2,6 +2,18 @@
 
 @extends('backend.layouts.app')
 
+@push('after-styles')
+    <style>
+        label {
+            color: white
+        }
+
+        input {
+            color: white !important;
+        }
+    </style>
+@endpush
+
 @section('title', __('Update User'))
 
 @section('content')
@@ -16,15 +28,19 @@
             </x-slot>
 
             <x-slot name="body">
-                <div x-data="{userType : '{{ $user->type }}'}">
+                <div x-data="{ userType: '{{ $user->type }}' }">
                     @if (!$user->isMasterAdmin())
                         <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label">@lang('Type')</label>
 
                             <div class="col-md-10">
-                                <select name="type" class="form-control" required x-on:change="userType = $event.target.value">
-                                    <option value="{{ $model::TYPE_USER }}" {{ $user->type === $model::TYPE_USER ? 'selected' : '' }}>@lang('User')</option>
-                                    <option value="{{ $model::TYPE_ADMIN }}" {{ $user->type === $model::TYPE_ADMIN ? 'selected' : '' }}>@lang('Administrator')</option>
+                                <select name="type" class="form-control" required
+                                    x-on:change="userType = $event.target.value">
+                                    <option value="{{ $model::TYPE_USER }}"
+                                        {{ $user->type === $model::TYPE_USER ? 'selected' : '' }}>@lang('User')</option>
+                                    <option value="{{ $model::TYPE_ADMIN }}"
+                                        {{ $user->type === $model::TYPE_ADMIN ? 'selected' : '' }}>@lang('Administrator')
+                                    </option>
                                 </select>
                             </div>
                         </div><!--form-group-->
@@ -34,7 +50,8 @@
                         <label for="name" class="col-md-2 col-form-label">@lang('Name')</label>
 
                         <div class="col-md-10">
-                            <input type="text" name="name" class="form-control" placeholder="{{ __('Name') }}" value="{{ old('name') ?? $user->name }}" maxlength="100" required />
+                            <input type="text" name="name" class="form-control" placeholder="{{ __('Name') }}"
+                                value="{{ old('name') ?? $user->name }}" maxlength="100" required />
                         </div>
                     </div><!--form-group-->
 
@@ -42,7 +59,9 @@
                         <label for="email" class="col-md-2 col-form-label">@lang('E-mail Address')</label>
 
                         <div class="col-md-10">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') ?? $user->email }}" maxlength="255" required />
+                            <input type="email" name="email" id="email" class="form-control"
+                                placeholder="{{ __('E-mail Address') }}" value="{{ old('email') ?? $user->email }}"
+                                maxlength="255" required />
                         </div>
                     </div><!--form-group-->
 

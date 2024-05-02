@@ -4,6 +4,30 @@
 
 @section('title', __('Create User'))
 
+@push('after-styles')
+    <style>
+        label {
+            color: white
+        }
+
+        input {
+            color: white !important;
+        }
+
+        select {
+            color: white !important;
+        }
+
+        select option {
+            color: white
+        }
+
+        blockquote {
+            color: white
+        }
+    </style>
+@endpush
+
 @section('content')
     <x-forms.post :action="route('admin.auth.user.store')">
         <x-backend.card>

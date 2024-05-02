@@ -21,7 +21,7 @@
             color: white;
         }
 
-        table{
+        table {
             border-collapse: separate;
             border-spacing: 0 15px;
             color: black !important;
@@ -33,13 +33,15 @@
             border-bottom: 0 !important;
         }
 
-        table tbody td, .users-table tbody th {
+        table tbody td,
+        .users-table tbody th {
             background-color: #626161 !important;
             border-top: 0 !important;
             border-bottom: 0;
         }
 
-        table td, .users-table th {
+        table td,
+        .users-table th {
             padding-top: 8px;
             padding-bottom: 8px;
         }
@@ -70,7 +72,6 @@
         /*    padding: 3px 10px;*/
         /*    border-radius: 5px;*/
         /*}*/
-
     </style>
 @endpush
 
@@ -82,12 +83,7 @@
 
         @if ($logged_in_user->hasAllAccess())
             <x-slot name="headerActions">
-                <x-utils.link
-                    icon="c-icon cil-plus"
-                    class="card-header-action"
-                    :href="route('admin.auth.user.create')"
-                    :text="__('Create User')"
-                />
+                <x-utils.link icon="c-icon cil-plus" class="card-header-action" :href="route('admin.auth.user.create')" :text="__('Create User')" />
             </x-slot>
         @endif
 
