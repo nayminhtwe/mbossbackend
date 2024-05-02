@@ -74,15 +74,6 @@
                 <!--form-group-->
 
                 <div class="form-group row">
-                    <label for="date" class="col-md-2 col-form-label">@lang('Due Date')</label>
-
-                    <div class="col-md-10">
-                        <input type="date" name="date" class="form-control" placeholder="{{ __('Due Date') }}" value="{{ old('date') ?? $invoice->date}}" maxlength="100" />
-                    </div>
-                </div>
-                <!--form-group-->
-
-                <div class="form-group row">
                     <label for="price" class="col-md-2 col-form-label">@lang('Original Invoice Amount')</label>
 
                     <div class="col-md-10">
@@ -146,6 +137,16 @@
                     <div class="col-md-10">
                         <input type="date" name="invoice_selling_date" class="form-control"
                             value="{{ old('invoice_selling_date') ?? $invoice->invoice_selling_date }}" maxlength="100" />
+                    </div>
+                </div>
+                <!--form-group-->
+
+                <div class="form-group row">
+                    <label for="date" class="col-md-2 col-form-label">@lang('Invoice Due Date')</label>
+
+                    <div class="col-md-10">
+                        <input type="date" name="invoice_due_date" class="form-control"
+                            value="{{ old('invoice_due_date') ?? $invoice->date }}" maxlength="100" />
                     </div>
                 </div>
                 <!--form-group-->

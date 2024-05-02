@@ -144,7 +144,6 @@
                             type="date"
                             name="invoice_issued_date"
                             v-model="new_invoice.invoice_issued_date"
-                            v-on:change="diffBetweenDay"
                             class="form-control"
                             placeholder="Invoice Issued Date"
                             maxlength="100"
@@ -169,6 +168,28 @@
                             v-on:change="diffBetweenDay"
                             class="form-control"
                             placeholder="Invoice Selling Date"
+                            maxlength="100"
+                            required
+                        />
+                    </div>
+                </div>
+                <!--form-group-->
+
+                <div class="form-group row">
+                    <label
+                        for="invoice_due_date"
+                        class="col-md-3 col-form-label"
+                        >Invoice Due Date*</label
+                    >
+
+                    <div class="col-md-8">
+                        <input
+                            type="date"
+                            name="invoice_due_date"
+                            v-model="new_invoice.invoice_due_date"
+                            v-on:change="diffBetweenDay"
+                            class="form-control"
+                            placeholder="Invoice Due Date"
                             maxlength="100"
                             required
                         />
@@ -377,6 +398,7 @@ export default {
             total_deducted_amt: 0,
             issued_date: 0,
             selling_date: 0,
+            due_date: 0,
             new_invoice: {
                 id: this.invoice.id,
                 price: "",
@@ -385,6 +407,7 @@ export default {
                 discount_rate: "",
                 invoice_issued_date: "",
                 invoice_selling_date: "",
+                invoice_due_date: "",
                 remaining_day: 0,
                 day_delays: 1,
                 daily_discount_rate: 0.1,
@@ -405,6 +428,7 @@ export default {
                 this.new_invoice.discount_rate &&
                 this.new_invoice.invoice_issued_date &&
                 this.new_invoice.invoice_selling_date &&
+                this.new_invoice.invoice_due_date &&
                 this.new_invoice.remaining_day &&
                 this.new_invoice.day_delays &&
                 this.new_invoice.daily_discount_rate &&
@@ -448,6 +472,9 @@ export default {
             if (!this.new_invoice.invoice_selling_date) {
                 this.errors.push("Invoice Selling Date required.");
             }
+            if (!this.new_invoice.invoice_due_date) {
+                this.errors.push("Invoice Due Date required.");
+            }
             if (!this.new_invoice.remaining_day) {
                 this.errors.push("Remaining Days required.");
             }
@@ -476,10 +503,10 @@ export default {
         },
         diffBetweenDay() {
             // console.log(moment())
-            this.issued_date = moment(new Date(this.new_invoice.invoice_issued_date));
             this.selling_date = moment(new Date(this.new_invoice.invoice_selling_date));
+            this.due_date = moment(new Date(this.new_invoice.invoice_due_date));
             
-            this.new_invoice.remaining_day = this.selling_date.diff(this.issued_date, 'days')
+            this.new_invoice.remaining_day = this.due_date.diff(this.selling_date, 'days')
         },
         calculateDiscountRate() {
             this.new_invoice.seller_discount_rate =

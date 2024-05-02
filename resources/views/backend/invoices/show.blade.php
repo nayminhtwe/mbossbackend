@@ -29,8 +29,6 @@
             <li class="list-group-item">@lang('Origin Invoice Amount') : {{ $invoice->price }}</li>
             <li class="list-group-item">@lang('Payer Name') : {{ $invoice->category->name }}</li>
             <li class="list-group-item">@lang('Terms') : {{ $invoice->terms }}</li>
-            <li class="list-group-item">@lang('Due Date') : {{ $invoice->date }}</li>
-
             <li>
                 <div class="h4 form-group row col-md-2" style="text-decoration: underline">
                     @lang('For Buyer Pricing')
@@ -47,7 +45,8 @@
                 </div>
                 <li class="list-group-item">@lang('Invoice Issue Date') : {{ $invoice->invoice_issued_date }}</li>
                 <li class="list-group-item">@lang('Invoice Selling Date') : {{ $invoice->invoice_selling_date }}</li>
-                <li class="list-group-item">@lang('Remaining Days') : {{ $invoice->remaining_day }}</li>
+            <li class="list-group-item">@lang('Invoice Due Date') : {{ $invoice->date }}</li>
+            <li class="list-group-item">@lang('Remaining Days') : {{ $invoice->remaining_day }}</li>
                 <li class="list-group-item">@lang('Day Delays') : {{ $invoice->day_delays }}</li>
                 <li class="list-group-item">@lang('Daily Discount Rate') : {{ $invoice->daily_discount_rate }} %</li>
                 <li class="list-group-item">@lang('Discount Rate') : {{ $invoice->seller_discount_rate }} %</li>
