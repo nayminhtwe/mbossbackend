@@ -344,10 +344,18 @@
                                 alt="{{ \Illuminate\Support\Facades\Storage::url($seller_personal_info->app_user->seller_nrc_file->nrc_soft_copy) }}" height="250" width="250" onclick="this.requestFullscreen()">
                             @endif --}}
                                     @foreach ($seller_personal_info->app_user->seller_nrc_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}"
-                                            class="img-fluid"
-                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}"
-                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @if (Illuminate\Support\Facades\File::extension($file->nrc_soft_copy) === 'pdf' )
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}"
+                                    class="img-fluid"
+                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}"
+                                    height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}"
+                                    class="img-fluid"
+                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->nrc_soft_copy) }}"
+                                    height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
+                                        
                                     @endforeach
                                 </div>
                             </div>
@@ -369,10 +377,17 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_company_registration_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->company_registration_soft_copy) }}"
+                                    @if(Illuminate\Support\Facades\File::extension($file->company_registration_soft_copy) === 'pdf')
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->company_registration_soft_copy) }}"
+                                    class="img-fluid"
+                                    alt="{{ \Illuminate\Support\Facades\Storage::url($file->company_registration_soft_copy) }}"
+                                    height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->company_registration_soft_copy) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->company_registration_soft_copy) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
                                     @endforeach
                                 </div>
                             </div>
@@ -394,10 +409,18 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_company_extract_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
+                                    @if(Illuminate\Support\Facades\File::extension($file->company_extracts_soft_copy) === 'pdf')
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->company_extracts_soft_copy) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
+                                        
                                     @endforeach
                                 </div>
                             </div>
@@ -419,10 +442,18 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_company_billing_statement_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
+                                    @if(Illuminate\Support\Facades\File::extension($file->billing_statement) === 'pdf')
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->billing_statement) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
+                                        
                                     @endforeach
                                 </div>
                             </div>
@@ -444,10 +475,18 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_business_license_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
+                                    @if(Illuminate\Support\Facades\File::extension($file->nrc_soft_copy) === 'pdf')
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
+                                        
                                     @endforeach
                                 </div>
                             </div>
@@ -469,10 +508,18 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_bod_resolution_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
+                                    @if(Illuminate\Support\Facades\File::extension($file->bod_resolution) === 'pdf')
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->bod_resolution) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
+                                        
                                     @endforeach
                                 </div>
                             </div>
@@ -494,10 +541,18 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_import_export_license_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->import_export_license) }}"
+                                    @if(Illuminate\Support\Facades\File::extension($file->import_export_license)  === 'pdf')
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->import_export_license) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->import_export_license) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->import_export_license) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->import_export_license) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
+                                        
                                     @endforeach
                                 </div>
                             </div>
@@ -520,10 +575,20 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_contract_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
+                                    {{-- {{ echo "Illuminate\Support\Facades\File::extension($file->contract == ')" }} --}}
+
+                                    @if(Illuminate\Support\Facades\File::extension($file->contract) == 'pdf')
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->contract) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
+                                        
                                     @endforeach
                                 </div>
                             </div>
@@ -545,10 +610,18 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_other_files as $file)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
+                                    @if(Illuminate\Support\Facades\File::extension($file->other)  === 'pdf')
+                                    <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
                                             height="250" width="250" onclick="this.requestFullscreen()">
+                                    @else
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
+                                            class="img-fluid"
+                                            alt="{{ \Illuminate\Support\Facades\Storage::url($file->other) }}"
+                                            height="250" width="250" onclick="this.requestFullscreen()">
+                                    @endif
+                                        
                                     @endforeach
                                 </div>
                             </div>
