@@ -71,6 +71,8 @@
                                             <option value="">Please select your Marital Status..</option>
                                             <option value="Single">Single</option>
                                             <option value="Married">Married</option>
+                                            <option value="Divorced">Divorced</option>
+                                            <option value="Not to mention">Not to mention</option>
                                         </select>
                                         {{-- <label for="marital_status">Marital Status * :</label>
                                     <input type="text" name="marital_status" class="form-control" value="{{ old('marital_status') }}" maxlength="100" required /> --}}

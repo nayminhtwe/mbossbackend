@@ -65,7 +65,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="marital_status">Marital Status * :</label>
-                                    <input type="text" name="marital_status" class="form-control" value="{{ old('marital_status') ?? $sellerPersonalInfo->marital_status }}" maxlength="100" required />
+                                    <select class="form-control" name="marital_status" required>
+                                        <option value="Single" {{ $sellerPersonalInfo->marital_status == 'Single' ? 'selected' : ''}}>Single</option>
+                                        <option value="Married" {{ $sellerPersonalInfo->marital_status == 'Married' ? 'selected' : ''}}>Married</option>
+                                        <option value="Divorced" {{ $sellerPersonalInfo->marital_status == 'Divorced' ? 'selected' : ''}}>Divorced</option>
+                                        <option value="Not to mention" {{ $sellerPersonalInfo->marital_status == 'Not to mention' ? 'selected' : ''}}>Not to mention</option>
+                                    </select>
+                                    {{-- <input type="text" name="marital_status" class="form-control" value="{{ old('marital_status') ?? $sellerPersonalInfo->marital_status }}" maxlength="100" required /> --}}
                                 </div>
                             </div>
                             <div class="col-md-6">
