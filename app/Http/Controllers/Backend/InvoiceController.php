@@ -47,10 +47,10 @@ class InvoiceController extends Controller
             'day_delays' => 'required',
             'daily_discount_rate' => 'required',
             'seller_discount_rate' => 'required',
-            'discounted_amount' => 'required|integer',
+            'discounted_amount' => 'required',
             'service_fees' => 'required',
-            'service_fee_amount' => 'required|integer',
-            'seller_receivable_amount' => 'required|integer',
+            'service_fee_amount' => 'required',
+            'seller_receivable_amount' => 'required',
         ]);
 
         $id = $request->input('id');
@@ -69,6 +69,7 @@ class InvoiceController extends Controller
         $service_fees = $request->input('service_fees');
         $service_fee_amount = $request->input('service_fee_amount');
         $seller_receivable_amount = $request->input('seller_receivable_amount');
+        $discounted_amount_int = (int) $discounted_amount;
 
         $invoice = Invoice::findOrfail($id);
 
@@ -83,7 +84,7 @@ class InvoiceController extends Controller
         $invoice->day_delays = $day_delays;
         $invoice->daily_discount_rate = $daily_discount_rate;
         $invoice->seller_discount_rate = $seller_discount_rate;
-        $invoice->discounted_amount = $discounted_amount;
+        $invoice->discounted_amount = $discounted_amount_int;
         $invoice->service_fees = $service_fees;
         $invoice->service_fee_amount = $service_fee_amount;
         $invoice->seller_receivable_amount = $seller_receivable_amount;

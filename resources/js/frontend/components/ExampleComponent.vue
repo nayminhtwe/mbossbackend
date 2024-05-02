@@ -514,7 +514,7 @@ export default {
                 this.new_invoice.daily_discount_rate;
             // console.log(this.new_invoice.seller_discount_rate);
 
-            this.new_invoice.discounted_amount =
+            this.new_invoice.discounted_amount = Math.floor
                 (this.new_invoice.price *
                     this.new_invoice.seller_discount_rate) /
                 100;
