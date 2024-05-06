@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\AppUser;
 use App\Http\Requests\API\StoreInvoiceRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Invoice;
@@ -238,6 +239,11 @@ class InvoiceController extends Controller
 
                     $app_user->wallet -= $purchase_amount;
                     $app_user->save();
+
+                    $seller = AppUser::where('id', $invoice->app_user_id)->first();
+
+                    $seller->wallet =$invoice->seller_receivable_amount;
+                    $seller->save();
 
                     TransactionLog::create([
                         'app_user_id' => $app_user->id,
