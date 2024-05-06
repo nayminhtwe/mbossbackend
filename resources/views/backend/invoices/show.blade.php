@@ -24,7 +24,7 @@
                     @lang('Invoice ID ') : {{ $invoice->title }}
                 </strong>
             </li>
-            <li class="list-group-item">@lang('App User Name') : {{ $invoice->app_user->firstName }}</li>
+            <li class="list-group-item">@lang('App User Name') : {{ $invoice->app_user->firstName .' '. $invoice->app_user->lastName }}</li>
             <li class="list-group-item">@lang('Description') : {{ $invoice->description }}</li>
             <li class="list-group-item">@lang('Origin Invoice Amount') : {{ $invoice->price }}</li>
             <li class="list-group-item">@lang('Payer Name') : {{ $invoice->category->name }}</li>

@@ -333,6 +333,8 @@
                                         <option value="">Please select your Marital Status..</option>
                                         <option value="Single">Single</option>
                                         <option value="Married">Married</option>
+                                        <option value="Divorced">Divorced</option>
+                                        <option value="Not to mention">Not to mention</option>
                                     </select>
                                     {{-- <input type="text" name="maritalStatus" class="form-control" value="{{ old('maritalStatus') }}" maxlength="100" required /> --}}
                                 </div>
