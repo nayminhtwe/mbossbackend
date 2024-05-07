@@ -274,4 +274,43 @@ class InvoiceController extends Controller
     {
         return view('backend.invoices.sale_ended_list');
     }
+
+    public function get_purchased_finish_after_delay($invoice)
+    {
+        $invoice = Invoice::findOrfail($invoice);
+
+        return view('backend.invoices.finished_after_delay',compact('invoice'));
+    }
+
+    public function purchased_finish_after_delay(Request $request)
+    {
+        $request->validate([
+            'invoice_id' => 'required',
+            'extra_day_delay' => 'required',
+            'extra_daily_rate' => 'required',
+            'extra_service_fee' => 'required',
+            'repayment_amount' => 'required',
+        ]);
+
+        $invoice_id = $request->input('invoice_id');
+        $extra_day_delay = $request->input('extra_day_delay');
+        $extra_daily_rate = $request->input('extra_daily_rate');
+        $extra_service_fee = $request->input('extra_service_fee');
+        $repayment_amount = $request->input('repayment_amount');
+
+        $invoice = Invoice::where('id', $invoice_id)->where('status', '1')->where('purchase', 1)->first();
+
+        if($invoice) {
+            $invoice->extra_day_delay = $extra_day_delay;
+            $invoice->extra_daily_rate = $extra_daily_rate;
+            $invoice->extra_service_fee = $extra_service_fee;
+            $invoice->repayment_amount = $repayment_amount;
+            $invoice->finish_status = 1;
+            $invoice->save();
+
+            return redirect()->route('admin.invoice.purchased_finished_list', $invoice)->withFlashSuccess(__('Changed Invoice purchased status to Finished.'));
+        } else {
+            return redirect()->route('admin.invoice.purchased_finished_list')->with('flash_warning','This invoice have no more!');
+        }
+    }
 }

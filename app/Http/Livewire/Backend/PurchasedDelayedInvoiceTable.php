@@ -28,12 +28,12 @@ class PurchasedDelayedInvoiceTable extends DataTableComponent
             Column::make(__('Purchased User ID'), ('app_user.id'))->sortable(),
             Column::make(__('Purchased User Name'), ('app_user.firstName'))->sortable(),
             Column::make(__('Last Updated At'), ('updated_at'))->sortable(),
-            // Column::make(__('Actions')),
+            Column::make(__('Actions')),
         ];
     }
 
     public function rowView(): string
     {
-        return 'backend.invoices.includes.purchased_default_row';
+        return 'backend.invoices.includes.purchased_delayed_row';
     }
 }

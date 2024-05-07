@@ -34,6 +34,6 @@ class PurchasedFinishedInvoiceTable extends DataTableComponent
 
     public function rowView(): string
     {
-        return 'backend.invoices.includes.purchased_default_row';
+        return 'backend.invoices.includes.purchased_finished_row';
     }
 }

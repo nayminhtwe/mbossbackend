@@ -30,6 +30,6 @@
     {{ $row->purchase_at }}
 </x-livewire-tables::bs4.table.cell>
 
-{{-- <x-livewire-tables::bs4.table.cell>
-    @include('backend.invoices.includes.purchased_invoice_status_actions', ['invoice' => $row])
-</x-livewire-tables::bs4.table.cell> --}}
+<x-livewire-tables::bs4.table.cell>
+    @include('backend.invoices.includes.finish_after_delay_invoice_status_actions', ['invoice' => $row])
+</x-livewire-tables::bs4.table.cell>
