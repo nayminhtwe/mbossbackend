@@ -12,7 +12,7 @@ class DeletedInvoiceTable extends DataTableComponent
 {
     public function query(): Builder
     {
-        $query =  Invoice::onlyTrashed();
+        $query =  Invoice::where('delete_status', 0)->onlyTrashed();
         
         return $query;
     }

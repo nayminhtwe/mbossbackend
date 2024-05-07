@@ -30,3 +30,7 @@ Route::get('purchased_default_list', [InvoiceController::class, 'purchased_defau
 Route::get('seller_approved_invoice_list', [InvoiceController::class, 'seller_approved_invoice_list'])->name('invoice.seller_approved_invoice_list');
 
 Route::get('deleted_invoice_list', [InvoiceController::class, 'deleted_invoice_list'])->name('invoice.deleted_invoice_list');
+
+Route::get('end_sale/{invoice_id}', [InvoiceController::class, 'end_sale'])->name('end_sale');
+
+Route::get('sale_ended_invoice_list', [InvoiceController::class, 'sale_ended_invoice_list'])->name('invoice.sale_ended_invoice_list');

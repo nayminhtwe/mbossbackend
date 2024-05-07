@@ -153,6 +153,11 @@
                                       :text="__('Deleted Invoice List')"/>
                     </li>
 
+                    <li class="c-sidebar-nav-item">
+                        <x-utils.link :href="route('admin.invoice.sale_ended_invoice_list')" class="c-sidebar-nav-link"
+                                      :text="__('Sale Ended Invoice List')"/>
+                    </li>
+
                     <li class="c-sidebar-nav-dropdown">
                         <x-utils.link href="#" icon="c-sidebar-nav-icon cil-dollar"
                                       class="c-sidebar-nav-dropdown-toggle"

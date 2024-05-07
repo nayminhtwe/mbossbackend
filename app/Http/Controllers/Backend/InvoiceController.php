@@ -171,6 +171,8 @@ class InvoiceController extends Controller
 
     public function destroy(Invoice $invoice)
     {
+        $invoice->delete_status = 0;
+        $invoice->save();
         $invoice->delete();
 
         if($invoice->status == 0) {
@@ -253,5 +255,23 @@ class InvoiceController extends Controller
     public function deleted_invoice_list()
     {
         return view('backend.invoices.deleted');
+    }
+
+    public function end_sale($invoice_id)
+    {
+        $invoice = Invoice::where('id', $invoice_id)->where('status', '1')->first();
+
+        if($invoice) {
+            $invoice->delete_status = 1;
+            $invoice->save();
+            $invoice->delete();
+
+            return redirect()->route('admin.invoice.sale_ended_invoice_list', $invoice)->withFlashSuccess(__('Invoice Sale is end & Successfully Deleted'));
+        }
+    }
+
+    public function sale_ended_invoice_list()
+    {
+        return view('backend.invoices.sale_ended_list');
     }
 }
