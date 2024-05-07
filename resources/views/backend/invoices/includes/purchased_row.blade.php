@@ -11,11 +11,11 @@
 </x-livewire-tables::bs4.table.cell> --}}
 
 <x-livewire-tables::bs4.table.cell>
-    {{ $row->price }}
+    {{number_format($row->price, 0, '', ',')}}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{ $row->purchase_amount }}
+    {{number_format($row->purchase_amount, 0, '', ',')}}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
