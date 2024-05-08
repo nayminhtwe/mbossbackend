@@ -38,3 +38,5 @@ Route::get('sale_ended_invoice_list', [InvoiceController::class, 'sale_ended_inv
 Route::get('get_purchased_finish_after_delay/{invoice_id}', [InvoiceController::class, 'get_purchased_finish_after_delay'])->name('get_purchased_finish_after_delay');
 
 Route::post('purchased_finish_after_delay', [InvoiceController::class, 'purchased_finish_after_delay'])->name('purchased_finish_after_delay');
+
+Route::get('purchased_finished_after_delay_list', [InvoiceController::class, 'purchased_finished_after_delay_list'])->name('invoice.purchased_finished_after_delay_list');

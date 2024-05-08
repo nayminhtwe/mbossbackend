@@ -313,4 +313,9 @@ class InvoiceController extends Controller
             return redirect()->route('admin.invoice.purchased_finished_list')->with('flash_warning','This invoice have no more!');
         }
     }
+
+    public function purchased_finished_after_delay_list()
+    {
+        return view('backend.invoices.purchased_finished_after_delay_list');
+    }
 }

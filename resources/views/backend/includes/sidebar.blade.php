@@ -191,6 +191,12 @@
                                               class="c-sidebar-nav-link"
                                               :text="__('Purchased Default List')"/>
                             </li>
+
+                            <li class="c-sidebar-nav-item">
+                                <x-utils.link :href="route('admin.invoice.purchased_finished_after_delay_list')"
+                                              class="c-sidebar-nav-link"
+                                              :text="__('Purchased Finish List (Delay)')"/>
+                            </li>
                         </ul>
 
                     </li>

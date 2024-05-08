@@ -12,7 +12,7 @@ class PurchasedFinishedInvoiceTable extends DataTableComponent
 {
     public function query(): Builder
     {
-        $query =  Invoice::where('status', '1')->where('purchase', 1)->where('finish_status', 1)->with('category')->orderBy('id', 'desc');
+        $query =  Invoice::where('status', '1')->where('purchase', 1)->where('finish_status', 1)->whereNull('repayment_amount')->with('category')->orderBy('id', 'desc');
         
         return $query;
     }
@@ -28,6 +28,7 @@ class PurchasedFinishedInvoiceTable extends DataTableComponent
             Column::make(__('Purchased User ID'), ('app_user.id'))->sortable(),
             Column::make(__('Purchased User Name'), ('app_user.firstName'))->sortable(),
             Column::make(__('Last Updated At'), ('updated_at'))->sortable(),
+            Column::make(__('Finish Status')),
             // Column::make(__('Actions')),
         ];
     }
