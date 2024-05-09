@@ -24,7 +24,7 @@
                 </div>
                 <dl class="row">
                     <dt class="col-sm-3">1. Full Name</dt>
-                    <dd class="col-sm-9">: {{ $buyer_kyc->app_user->firstName }}</dd>
+                    <dd class="col-sm-9">: {{ $buyer_kyc->app_user->firstName . ' ' . $buyer_kyc->app_user->lastName }}</dd>
 
                     <dt class="col-sm-3">2. Date of Birth</dt>
                     <dd class="col-sm-9">: {{ $buyer_kyc->dateOfBirth }}</dd>

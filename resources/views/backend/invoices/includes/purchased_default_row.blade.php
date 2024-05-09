@@ -23,7 +23,7 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{ $row->app_user->firstName }}
+    {{ $row->app_user->firstName . ' ' . $row->app_user->lastName }}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>

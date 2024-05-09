@@ -45,7 +45,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="full_name">Full Name * :</label>
-                                    <input type="text" name="full_name" class="form-control" value="{{ $app_user->firstName }}" maxlength="100" readonly required />
+                                    <input type="text" name="full_name" class="form-control" value="{{ $app_user->firstName. ' ' . $app_user->lastName }}" maxlength="100" readonly required />
                                 </div>
                             </div>
                             <div class="col-md-6">

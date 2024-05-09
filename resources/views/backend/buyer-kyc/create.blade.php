@@ -8,7 +8,7 @@
 <x-forms.post :action="route('admin.buyer-kyc.store')" method="POST" enctype="multipart/form-data">
     <x-backend.card>
         <x-slot name="header">
-            @lang('Buyer Register for ') <mark><strong>{{$app_user->firstName}}</strong></mark>
+            @lang('Buyer Register for ') <mark><strong>{{$app_user->firstName . ' ' . $app_user->lastName}}</strong></mark>
         </x-slot>
 
         <x-slot name="headerActions">

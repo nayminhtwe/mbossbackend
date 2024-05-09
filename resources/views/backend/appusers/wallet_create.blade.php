@@ -23,7 +23,7 @@
 
                     <div class="col-md-10">
                         <input type="text" name="firstName" class="form-control" placeholder="{{ __('Name') }}"
-                        value="{{ old('firstName') ?? $app_user->firstName }}" maxlength="100" readonly />
+                        value="{{ old('firstName') ?? $app_user->firstName . ' ' . $app_user->lastName }}" maxlength="100" readonly />
                     </div>
                 </div>
                 <!--form-group-->

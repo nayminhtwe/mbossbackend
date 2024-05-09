@@ -25,7 +25,7 @@
                     <label for="firstName" class="col-md-2 col-form-label">@lang('Name')</label>
 
                     <div class="col-md-10">
-                        <input type="text" name="firstName" class="form-control" value="{{ old('firstName') ?? $app_user->firstName }}" readonly />
+                        <input type="text" name="firstName" class="form-control" value="{{ old('firstName') ?? $app_user->firstName . ' ' . $app_user->lastName }}" readonly />
                     </div>
                 </div>
                 <!--form-group-->
