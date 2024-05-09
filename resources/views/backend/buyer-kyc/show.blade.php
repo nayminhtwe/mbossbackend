@@ -15,7 +15,7 @@
     </x-slot>
 
     <x-slot name="body">
-        
+
         <ul class="list-group">
 
             <li class="list-group-item">
@@ -24,7 +24,8 @@
                 </div>
                 <dl class="row">
                     <dt class="col-sm-3">1. Full Name</dt>
-                    <dd class="col-sm-9">: {{ $buyer_kyc->app_user->firstName . ' ' . $buyer_kyc->app_user->lastName }}</dd>
+                    <dd class="col-sm-9">: {{ $buyer_kyc->app_user->firstName . ' ' . $buyer_kyc->app_user->lastName }}
+                    </dd>
 
                     <dt class="col-sm-3">2. Date of Birth</dt>
                     <dd class="col-sm-9">: {{ $buyer_kyc->dateOfBirth }}</dd>
@@ -190,8 +191,17 @@
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
                             @if($buyer_kyc->nrc_soft_copy != null)
-                            <img src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->nrc_soft_copy) }}" class="img-fluid"
-                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->nrc_soft_copy) }}" height="250" width="250" onclick="this.requestFullscreen()">
+                            @if (Illuminate\Support\Facades\File::extension($buyer_kyc->nrc_soft_copy) === 'pdf' )
+                            <embed src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->nrc_soft_copy) }}"
+                                class="img-fluid"
+                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->nrc_soft_copy) }}"
+                                height="250" width="250" onclick="this.requestFullscreen()">
+                            @else
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->nrc_soft_copy) }}"
+                                class="img-fluid"
+                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->nrc_soft_copy) }}"
+                                height="250" width="250" onclick="this.requestFullscreen()">
+                            @endif
                             @else
                             @endif
                             -
@@ -208,8 +218,19 @@
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
                             @if($buyer_kyc->bank_book_soft_copy != null)
-                            <img src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->bank_book_soft_copy) }}" class="img-fluid"
-                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->bank_book_soft_copy) }}" height="250" width="250" onclick="this.requestFullscreen()">
+                            @if (Illuminate\Support\Facades\File::extension($buyer_kyc->bank_book_soft_copy) === 'pdf' )
+                            <embed src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->bank_book_soft_copy) }}"
+                                class="img-fluid"
+                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->bank_book_soft_copy) }}"
+                                height="250" width="250" onclick="this.requestFullscreen()">
+                            @else
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->bank_book_soft_copy) }}"
+                                class="img-fluid"
+                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->bank_book_soft_copy) }}"
+                                height="250" width="250" onclick="this.requestFullscreen()">
+                            @endif
+
+                            
                             @else
                             @endif
                             -
@@ -226,8 +247,18 @@
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
                             @if($buyer_kyc->household_registration_soft_copy != null)
-                            <img src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->household_registration_soft_copy) }}" class="img-fluid"
-                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->household_registration_soft_copy) }}" height="250" width="250" onclick="this.requestFullscreen()">
+                            @if (Illuminate\Support\Facades\File::extension($buyer_kyc->household_registration_soft_copy) === 'pdf' )
+                            <embed src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->household_registration_soft_copy) }}"
+                            class="img-fluid"
+                            alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->household_registration_soft_copy) }}"
+                            height="250" width="250" onclick="this.requestFullscreen()">
+                            @else
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->household_registration_soft_copy) }}"
+                                class="img-fluid"
+                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->household_registration_soft_copy) }}"
+                                height="250" width="250" onclick="this.requestFullscreen()">
+                            @endif
+                            
                             @else
                             @endif
                             -
@@ -244,8 +275,17 @@
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
                             @if($buyer_kyc->authorize_person_nrc_soft_copy != null)
-                            <img src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->authorize_person_nrc_soft_copy) }}" class="img-fluid"
-                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->authorize_person_nrc_soft_copy) }}" height="250" width="250" onclick="this.requestFullscreen()">
+                            @if (Illuminate\Support\Facades\File::extension($buyer_kyc->authorize_person_nrc_soft_copy) === 'pdf' )
+                            <embed src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->authorize_person_nrc_soft_copy) }}"
+                            class="img-fluid"
+                            alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->authorize_person_nrc_soft_copy) }}"
+                            height="250" width="250" onclick="this.requestFullscreen()">
+                            @else
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->authorize_person_nrc_soft_copy) }}"
+                                class="img-fluid"
+                                alt="{{ \Illuminate\Support\Facades\Storage::url($buyer_kyc->authorize_person_nrc_soft_copy) }}"
+                                height="250" width="250" onclick="this.requestFullscreen()">
+                            @endif
                             @else
                             @endif
                             -
@@ -253,10 +293,10 @@
                     </div>
                 </div>
             </li>
-            
+
         </ul>
 
-        
+
     </x-slot>
 
 </x-backend.card>
