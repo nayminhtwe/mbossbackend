@@ -475,7 +475,7 @@
                                     @endif --}}
 
                                     @foreach ($seller_personal_info->app_user->seller_business_license_files as $file)
-                                    @if(Illuminate\Support\Facades\File::extension($file->nrc_soft_copy) === 'pdf')
+                                    @if(Illuminate\Support\Facades\File::extension($file->business_license) === 'pdf')
                                     <embed src="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
                                             class="img-fluid"
                                             alt="{{ \Illuminate\Support\Facades\Storage::url($file->business_license) }}"
