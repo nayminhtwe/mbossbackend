@@ -2,9 +2,9 @@
     {{ $row->id }}
 </x-livewire-tables::bs4.table.cell>
 
-<x-livewire-tables::bs4.table.cell>
+{{-- <x-livewire-tables::bs4.table.cell>
     {{ $row->app_user_id }}
-</x-livewire-tables::bs4.table.cell>
+</x-livewire-tables::bs4.table.cell> --}}
 
 <x-livewire-tables::bs4.table.cell>
     {{ $row->full_name }}
