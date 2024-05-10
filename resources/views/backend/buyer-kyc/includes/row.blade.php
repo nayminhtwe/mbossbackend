@@ -10,6 +10,16 @@
     {{ $row->email }}
 </x-livewire-tables::bs4.table.cell>
 
+@if ($row->employmentNatureOfBusiness != null)
+<x-livewire-tables::bs4.table.cell>
+    {{ $row->employmentNatureOfBusiness. ' ( Employment )' }}
+</x-livewire-tables::bs4.table.cell>
+@elseif ($row->selfEmploymentNatureOfBusiness != null)
+<x-livewire-tables::bs4.table.cell>
+    {{ $row->selfEmploymentNatureOfBusiness. ' ( Self Employment )' }}
+</x-livewire-tables::bs4.table.cell>
+@endif
+
 <x-livewire-tables::bs4.table.cell>
     {{ $row->phone }}
 </x-livewire-tables::bs4.table.cell>

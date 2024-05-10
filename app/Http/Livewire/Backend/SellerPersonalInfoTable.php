@@ -25,9 +25,12 @@ class SellerPersonalInfoTable extends DataTableComponent
             Column::make(__('ID'), 'id')->sortable()->searchable(),
             Column::make(__('App User ID'), 'app_user_id')->sortable()->searchable(),
             Column::make(__('Full Name'), ('full_name'))->sortable()->searchable(),
-            Column::make(__('NRC ID / Passport Number'), ('nrc_or_passport'))->sortable()->searchable(),
+            Column::make(__('Business Name'), ('app_user.business_info.business_name'))->sortable()->searchable(),
+            // Column::make(__('NRC ID / Passport Number'), ('nrc_or_passport'))->sortable()->searchable(),
             // Column::make(__('Position'), ('position'))->sortable()->searchable(),
-            Column::make(__('Mobile Number'), ('personal_mobile'))->sortable()->searchable(),
+            Column::make(__('Personal Mobile'), ('personal_mobile'))->sortable()->searchable(),
+            Column::make(__('Business Mobile'), ('app_user.business_info.business_mobile'))->sortable()->searchable(),
+            Column::make(__('Product/Service'), ('product_or_service'))->sortable()->searchable(),
             Column::make(__('Actions')),
         ];
     }
