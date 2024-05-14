@@ -11,7 +11,7 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{number_format($row->amount, 0, '', ',')}}
+    {{number_format($row->amount, 2, '.', ',')}}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>

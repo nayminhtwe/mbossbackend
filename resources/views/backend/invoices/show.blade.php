@@ -26,15 +26,15 @@
             </li>
             <li class="list-group-item">@lang('App User Name') : {{ $invoice->app_user->firstName .' '. $invoice->app_user->lastName }}</li>
             <li class="list-group-item">@lang('Description') : {{ $invoice->description }}</li>
-            <li class="list-group-item">@lang('Origin Invoice Amount') : {{number_format($invoice->price, 0, '', ',')}}</li>
+            <li class="list-group-item">@lang('Origin Invoice Amount') : {{number_format($invoice->price, 2, '.', ',')}}</li>
             <li class="list-group-item">@lang('Payer Name') : {{ $invoice->category->name }}</li>
             <li class="list-group-item">@lang('Terms') : {{ $invoice->terms }}</li>
             <li>
                 <div class="h4 form-group row col-md-2" style="text-decoration: underline">
                     @lang('For Buyer Pricing')
                 </div>
-                <li class="list-group-item">@lang('Purchase Amount') : {{number_format($invoice->purchase_amount, 0, '', ',')}}</li>
-                <li class="list-group-item">@lang('Receivable Amount') : {{number_format($invoice->receivable_amount, 0, '', ',')}}</li>
+                <li class="list-group-item">@lang('Purchase Amount') : {{number_format($invoice->purchase_amount, 2, '.', ',')}}</li>
+                <li class="list-group-item">@lang('Receivable Amount') : {{number_format($invoice->receivable_amount, 2, '.', ',')}}</li>
                 <li class="list-group-item">@lang('Discount Rate') : {{ $invoice->discount }} %</li>
             </li>
             
@@ -50,10 +50,10 @@
                 <li class="list-group-item">@lang('Day Delays') : {{ $invoice->day_delays }}</li>
                 <li class="list-group-item">@lang('Daily Discount Rate') : {{ $invoice->daily_discount_rate }} %</li>
                 <li class="list-group-item">@lang('Discount Rate') : {{ $invoice->seller_discount_rate }} %</li>
-                <li class="list-group-item">@lang('Discounted Amount') : {{number_format($invoice->discounted_amount, 0, '', ',')}}</li>
+                <li class="list-group-item">@lang('Discounted Amount') : {{number_format($invoice->discounted_amount, 2, '.', ',')}}</li>
                 <li class="list-group-item">@lang('Service Fees') : {{ $invoice->service_fees }} %</li>
-                <li class="list-group-item">@lang('Service Fees Amount') : {{number_format($invoice->service_fee_amount, 0, '', ',')}}</li>
-                <li class="list-group-item">@lang('Seller Receivable Amount') : {{number_format($invoice->seller_receivable_amount, 0, '', ',')}}</li>
+                <li class="list-group-item">@lang('Service Fees Amount') : {{number_format($invoice->service_fee_amount, 2, '.', ',')}}</li>
+                <li class="list-group-item">@lang('Seller Receivable Amount') : {{number_format($invoice->seller_receivable_amount, 2, '.', ',')}}</li>
             </li>
 
             

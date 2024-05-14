@@ -70,7 +70,7 @@ class InvoiceController extends Controller
         $service_fee_amount = $request->input('service_fee_amount');
         $seller_receivable_amount = $request->input('seller_receivable_amount');
         // $discounted_amount_int = (int) $discounted_amount;
-        
+
         $invoice = Invoice::findOrfail($id);
 
         $invoice->price = $price;

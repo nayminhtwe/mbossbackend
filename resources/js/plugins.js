@@ -69,6 +69,23 @@ $(function () {
             }
         });
     })
+        .on('submit', 'form[name=sale-end-item]', function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Are you sure you want to do this?',
+                showCancelButton: true,
+                confirmButtonText: 'Confirm Sale End',
+                cancelButtonText: 'Cancel',
+                icon: 'warning'
+            }).then((result) => {
+                if (result.value) {
+                    this.submit()
+                } else {
+                    enableSubmitButtons($(this));
+                }
+            });
+        })
         .on('submit', 'form[name=confirm-item]', function (e) {
             e.preventDefault();
 
