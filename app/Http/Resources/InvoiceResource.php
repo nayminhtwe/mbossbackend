@@ -22,7 +22,7 @@ class InvoiceResource extends JsonResource
             'authorName' => $this->title,
             'authorProfilePic' => asset('img/brand/unknown-pic.jpeg'),
             'merchantID' => $this->category->id,
-            'merchantPhoto' => $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'] . Storage::url($this->category->images->first()->image),
+            'merchantPhoto' => $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'] . Storage::url($this->category->images->image),
             'merchantTitle' => $this->category->name,
             'description' => $this->description,
             'filters' => '',
