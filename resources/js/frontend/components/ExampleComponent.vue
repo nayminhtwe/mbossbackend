@@ -50,6 +50,7 @@
                     <div class="col-md-8">
                         <input
                             type="number"
+                            step="any"
                             name="price"
                             v-model="new_invoice.price"
                             class="form-control"
@@ -76,6 +77,7 @@
                     <div class="col-md-8">
                         <input
                             type="number"
+                            step="0.01"
                             name="purchase_amount"
                             v-model="new_invoice.purchase_amount"
                             class="form-control"
@@ -95,6 +97,7 @@
                     <div class="col-md-8">
                         <input
                             type="number"
+                            step="0.01"
                             name="receivable_amount"
                             v-model="new_invoice.receivable_amount"
                             class="form-control"
@@ -297,6 +300,7 @@
                     <div class="col-md-8">
                         <input
                             type="number"
+                            step="0.01"
                             name="discounted_amount"
                             v-model="new_invoice.discounted_amount"
                             class="form-control"
@@ -341,6 +345,7 @@
                     <div class="col-md-8">
                         <input
                             type="number"
+                            step="0.01"
                             name="service_fee_amount"
                             v-model="new_invoice.service_fee_amount"
                             class="form-control"
@@ -364,6 +369,7 @@
                     <div class="col-md-8">
                         <input
                             type="number"
+                            step="0.01"
                             name="seller_receivable_amount"
                             v-model="new_invoice.seller_receivable_amount"
                             class="form-control"
