@@ -12,7 +12,7 @@ class SellerApprovedInvoiceTable extends DataTableComponent
 {
     public function query(): Builder
     {
-        $query =  Invoice::where('status', 1)->where('seller_approval', 1)->with('category')->orderBy('id', 'desc');
+        $query =  Invoice::where('status', 1)->where('purchase', 0)->where('seller_approval', 1)->with('category')->orderBy('id', 'desc');
         
         return $query;
     }
