@@ -78,6 +78,30 @@ class PermissionRoleSeeder extends Seeder
             ]),
         ]);
 
+        $users = Permission::create([
+            'type' => User::TYPE_USER,
+            'name' => 'user.access.user',
+            'description' => 'All User Permissions',
+        ]);
+
+        $users = Permission::create([
+            'type' => User::TYPE_USER,
+            'name' => 'user.access.invoice',
+            'description' => 'All Invoice Permissions',
+        ]);
+
+        $users = Permission::create([
+            'type' => User::TYPE_USER,
+            'name' => 'user.access.seller',
+            'description' => 'All Seller Permissions',
+        ]);
+
+        $users = Permission::create([
+            'type' => User::TYPE_USER,
+            'name' => 'user.access.buyer',
+            'description' => 'All Buyer Permissions',
+        ]);
+
         // Assign Permissions to other Roles
         //
 

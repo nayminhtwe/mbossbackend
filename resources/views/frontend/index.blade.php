@@ -74,13 +74,15 @@
         <div id="app" class="flex-center position-ref full-height">
             <div class="top-right links">
                 @auth
-                    @if ($logged_in_user->isUser())
+                    {{-- @if ($logged_in_user->isUser())
                         <a href="{{ route('frontend.user.dashboard') }}">@lang('Dashboard')</a>
                     @endif
 
                     @if ($logged_in_user->hasAllAccess())
                         <a href="{{ route('admin.dashboard') }}">@lang('Dashboard')</a>
-                    @endif
+                    @endif --}}
+
+                    <a href="{{ route('admin.dashboard') }}">@lang('Dashboard')</a>
 
                     <a href="{{ route('frontend.user.account') }}">@lang('Account')</a>
                 @else
