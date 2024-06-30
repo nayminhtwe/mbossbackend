@@ -211,9 +211,9 @@ class BuyerKycController extends Controller
 
     public function app_user_index()
     {
-        $app_users = AppUser::where('buyer_status', 0)->get();
+        // $app_users = AppUser::where('buyer_status', 0)->get();
   
-        return view('backend.buyer-kyc.app_user_index',compact('app_users'));
+        return view('backend.buyer-kyc.app_user_index');
     }
 
     public function request()
