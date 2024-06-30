@@ -11,7 +11,7 @@
                 </li>
                 <li class="breadcrumb-item active">My Dashboard</li>
             </ol>
-        
+
             <div class="row">
                 <div class="col-xl-4 col-sm-8 mb-4">
                     <div class="card text-white bg-primary o-hidden h-100">
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-        
+
         </div>
     </x-backend.card> --}}
 
@@ -91,11 +91,11 @@
                                 </a>
                             </div>
                         </div>
-                        
+
                         <div class="icon p2">
                             <i class="fa fa-id-badge fa-6x" style="color:rgba(0, 0, 0, 0.15)"></i>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                                     <span>
                                         View Details <strong>>></strong>
                                     </span>
-                                    
+
                                 </a>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
             </div>
             <!-- /.col-->
         </div>
-        
+
     </div>
 @endsection
 
