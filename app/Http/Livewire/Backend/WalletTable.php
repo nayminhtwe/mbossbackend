@@ -17,7 +17,9 @@ class WalletTable extends DataTableComponent
 
     public function query(): Builder
     {
-        $query = AppUser::where('seller_status', 1)->orWhere('buyer_status', 1);
+        $query = AppUser::where(function($query) {
+            return $query->where('seller_status', 1)->orWhere('buyer_status', 1);
+        });
 
         return $query;
     }
