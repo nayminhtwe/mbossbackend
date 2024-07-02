@@ -18,6 +18,10 @@
 <x-livewire-tables::bs4.table.cell>
     {{ $row->selfEmploymentNatureOfBusiness. ' ( Self Employment )' }}
 </x-livewire-tables::bs4.table.cell>
+@else
+<x-livewire-tables::bs4.table.cell>
+    No Data
+</x-livewire-tables::bs4.table.cell>
 @endif
 
 <x-livewire-tables::bs4.table.cell>
