@@ -69,28 +69,28 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="extra_day_delay">Extra Day Delay :</label>
-                                    <input type="text" name="extra_day_delay" class="form-control" placeholder="{{ __('Extra Day Delay') }}" maxlength="100" required />
+                                    <input type="number" name="extra_day_delay" class="form-control" placeholder="{{ __('Extra Day Delay') }}" maxlength="100" required />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="extra_daily_rate">Extra Daily Rate % :</label>
-                                    <input type="text" name="extra_daily_rate" class="form-control" placeholder="{{ __('Extra Daily Rate') }}" maxlength="100" required />
+                                    <input type="number" name="extra_daily_rate" class="form-control" placeholder="{{ __('Extra Daily Rate') }}" maxlength="100" required />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="extra_service_fee">Extra Service Fees :</label>
-                                    <input type="text" name="extra_service_fee" class="form-control" placeholder="{{ __('Extra Service Fee') }}" maxlength="100" required />
+                                    <input type="number" name="extra_service_fee" class="form-control" placeholder="{{ __('Extra Service Fee') }}" maxlength="100" required />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="repayment_amount">Repayment Amount :</label>
-                                    <input type="text" name="repayment_amount" class="form-control" placeholder="{{ __('Repayment Amount') }}" maxlength="100" required />
+                                    <input type="number" name="repayment_amount" class="form-control" placeholder="{{ __('Repayment Amount') }}" maxlength="100" required />
                                 </div>
                             </div>
 

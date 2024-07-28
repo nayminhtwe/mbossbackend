@@ -38,7 +38,7 @@ class AppUserController extends Controller
 
             'dateOfBirth' => 'required',
 
-            'nrc' => 'required',
+            'nrc' => 'required|unique:app_users,nrc',
 
             'permanentAddress' => 'required',
 
@@ -46,9 +46,9 @@ class AppUserController extends Controller
 
             'age' => 'required',
 
-            'bankName' => 'required',
+            'bankName' => 'required|regex:/^[a-zA-Z ]+$/',
 
-            'bankAcc' => 'required',
+            'bankAcc' => 'required|min:11|max:17',
 
             'bankNameOptional' => '',
 

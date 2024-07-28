@@ -19,7 +19,7 @@
                 <div class="card">
                     <strong>
                         <div class="card-header text-center h2">
-                            Business Information
+                            KYC Documents
                         </div>
                         <div class="col-12 text-warning">* refers to required information</div>
                     </strong>

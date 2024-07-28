@@ -21,6 +21,7 @@ class FinishedInvoiceTable extends DataTableComponent
     {
         return [
             Column::make(__('ID'), 'id')->sortable()->searchable(),
+            Column::make(__('Seller Name'), 'app_user.firstName')->sortable()->searchable(),
             Column::make(__('Invoice ID'), ('title'))->searchable()->sortable(),
             Column::make(__('Original Invoice Amount'), ('price'))->searchable()->sortable(),
             Column::make(__('Payer Name'), ('category.name'))->searchable()->sortable(),
