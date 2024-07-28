@@ -81,58 +81,63 @@ class AppUserController extends Controller
             $user = AppUser::where('email', $email)->first();
             if(!$user) {
 
-                $has_image = $request->hasFile('photoFile');
-
-                if($has_image) {
-                    $store_image = $request->file('photoFile');
-                    $image_file = $store_image->store('public/profile');
-                    $image_url = env('APP_URL'). Storage::url($image_file);
+                if($age < 18) {
+                    return response()->json(['error_code' =>  0,'status' => 1, 'message' => 'Age must be above 18'],  200);
                 } else {
-                    $image_url = null;
+
+                    $has_image = $request->hasFile('photoFile');
+
+                    if($has_image) {
+                        $store_image = $request->file('photoFile');
+                        $image_file = $store_image->store('public/profile');
+                        $image_url = env('APP_URL'). Storage::url($image_file);
+                    } else {
+                        $image_url = null;
+                    }
+
+                    $userID = Str::uuid()->toString();
+
+                    $user = AppUser::create([
+                        'userID' => $userID,
+                        'email' => $email,
+                        'firstName' => $firstName,
+                        'lastName' => $lastName,
+                        'appIdentifier' => $appIdentifier,
+                        'password' => $password,
+                        'phone' => $phone,
+                        'date_of_birth' => $dateOfBirth,
+                        'nrc' => $nrc,
+                        'currentAddress' => $currentAddress,
+                        'permanentAddress' => $permanentAddress,
+                        'age' => $age,
+                        'bankName' => $bankName,
+                        'bankAcc' => $bankAcc,
+                        'bankNameOptional' => $bankNameOptional,
+                        'bankAccOptional' => $bankAccOptional,
+                        'profilePictureURL' => $image_url,
+                        'seller_buyer_status' => $seller_buyer_status,
+                        'wallet' => 0,
+                        'seller_status' => 0,
+                        'buyer_status' => 0,
+                        'seller_request_count' => 0,
+                        'buyer_request_count' => 0,
+                        'seller_submitted' => 0,
+                        'buyer_submitted' => 0
+                    ]);
+
+                    SellerPending::create([
+                        'app_user_id' => $user->id,
+                        'personal_info' => 0,
+                        'business_info' => 0,
+                        'nrc_file' => 0,
+                        'compnay_registration_file' => 0,
+                        'company_extract_file' => 0,
+                        'company_billing_statement_file' => 0,
+                        'business_license_file' => 0,
+                        'bod_resolution_file' => 0,
+                        'import_export_license_file' => 0
+                    ]);
                 }
-
-                $userID = Str::uuid()->toString();
-
-                $user = AppUser::create([
-                    'userID' => $userID,
-                    'email' => $email,
-                    'firstName' => $firstName,
-                    'lastName' => $lastName,
-                    'appIdentifier' => $appIdentifier,
-                    'password' => $password,
-                    'phone' => $phone,
-                    'date_of_birth' => $dateOfBirth,
-                    'nrc' => $nrc,
-                    'currentAddress' => $currentAddress,
-                    'permanentAddress' => $permanentAddress,
-                    'age' => $age,
-                    'bankName' => $bankName,
-                    'bankAcc' => $bankAcc,
-                    'bankNameOptional' => $bankNameOptional,
-                    'bankAccOptional' => $bankAccOptional,
-                    'profilePictureURL' => $image_url,
-                    'seller_buyer_status' => $seller_buyer_status,
-                    'wallet' => 0,
-                    'seller_status' => 0,
-                    'buyer_status' => 0,
-                    'seller_request_count' => 0,
-                    'buyer_request_count' => 0,
-                    'seller_submitted' => 0,
-                    'buyer_submitted' => 0
-                ]);
-
-                SellerPending::create([
-                    'app_user_id' => $user->id,
-                    'personal_info' => 0,
-                    'business_info' => 0,
-                    'nrc_file' => 0,
-                    'compnay_registration_file' => 0,
-                    'company_extract_file' => 0,
-                    'company_billing_statement_file' => 0,
-                    'business_license_file' => 0,
-                    'bod_resolution_file' => 0,
-                    'import_export_license_file' => 0
-                ]);
 
             } else {
                 return response()->json(['error_code' => 0, 'status' => 2, 'message' => 'User is already registered'],  200);

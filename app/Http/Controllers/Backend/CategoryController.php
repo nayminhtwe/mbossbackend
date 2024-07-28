@@ -68,7 +68,7 @@ class CategoryController extends Controller
 
             DB::commit();
 
-            return redirect()->route('admin.category.index', $Category)->withFlashSuccess(__('Category was successfully created.'));
+            return redirect()->route('admin.category.index', $Category)->withFlashSuccess(__('New Payer is Successfully Created.'));
         } catch (Exception $e) {
             DB::rollBack();
 
@@ -141,11 +141,11 @@ class CategoryController extends Controller
 
             DB::commit();
 
-            return redirect()->route('admin.category.index', $category)->withFlashSuccess(__('Category was successfully updated.'));
+            return redirect()->route('admin.category.index', $category)->withFlashSuccess(__('Payer is Successfully Updated.'));
         } catch (Exception $e) {
             DB::rollBack();
 
-            throw new GeneralException(__('There was a problem updating the Category. Please try again.'));
+            throw new GeneralException(__('There was a problem updating the Payer. Please try again.'));
         }
     }
 
@@ -166,6 +166,6 @@ class CategoryController extends Controller
 
         $Category->delete();
 
-        return redirect()->route('admin.category.index')->with('success', 'Category deleted successfully');
+        return redirect()->route('admin.category.index')->with('success', 'Payer deleted successfully');
     }
 }
