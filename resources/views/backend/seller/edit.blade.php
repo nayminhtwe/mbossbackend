@@ -222,7 +222,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="registration_date">4. Registration Date * :</label>
-                                    <input type="text" name="registration_date" class="form-control" value="{{ old('registration_date') ?? $sellerPersonalInfo->app_user->business_info->registration_date }}" maxlength="100" required />
+                                    <input type="text" name="registration_date" class="form-control" value="{{ old('registration_date') ?? $sellerPersonalInfo->app_user->business_info->registration_date }}" maxlength="100" max="2024-06-30" required />
                                 </div>
                             </div>
                             <div class="col-md-6">

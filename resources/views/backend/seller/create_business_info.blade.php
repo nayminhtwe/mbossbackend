@@ -60,7 +60,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="registration_date">4. Registration Date * :</label>
-                                    <input type="date" name="registration_date" class="form-control" maxlength="100" required />
+                                    <input type="date" name="registration_date" class="form-control" maxlength="100" max="2024-06-30" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
