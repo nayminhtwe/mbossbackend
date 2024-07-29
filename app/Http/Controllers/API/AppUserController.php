@@ -48,7 +48,7 @@ class AppUserController extends Controller
 
             'bankName' => 'required|regex:/^[a-zA-Z ]+$/',
 
-            'bankAcc' => 'required|min:11|max:17',
+            'bankAcc' => 'required|regex:/^\d{11,17}$/',
 
             'bankNameOptional' => '',
 
