@@ -71,7 +71,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="birth_date">Birth Date * :</label>
-                                    <input type="text" name="birth_date" class="form-control" value="{{ old('birth_date') ?? $kyc->birth_date }}" maxlength="100" required />
+                                    <input type="text" name="birth_date" class="form-control" value="{{ old('birth_date') ?? $kyc->birth_date }}" maxlength="100" max="2008-12-31" equired />
                                 </div>
                             </div>
                             <div class="col-md-6">

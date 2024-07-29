@@ -81,7 +81,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="birth_date">Birth Date * :</label>
-                                        <input type="date" name="birth_date" class="form-control" maxlength="100"
+                                        <input type="date" name="birth_date" class="form-control" maxlength="100" max="2008-12-31"
                                             required />
                                     </div>
                                 </div>
