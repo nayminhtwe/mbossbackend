@@ -47,7 +47,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="dateOfBirth">date Of Birth * :</label>
-                                    <input type="date" name="dateOfBirth" class="form-control" value="{{ old('dateOfBirth') }}" maxlength="100" max="2008-12-31" required />
+                                    <input type="date" name="dateOfBirth" class="form-control" value="{{ old('dateOfBirth') }}" maxlength="100" max="2006-07-31" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
